@@ -1,21 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { 
   Users, Target, Coffee, // For About Section
   Mail, Clock, CheckCircle, Send, Linkedin, Twitter, Instagram // For Contact Section
 } from 'lucide-react';
 
 export default function About() {
-  // Simple state to handle form submission simulation
-  const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success'
+  const form = useRef();
+  // Simple state to handle form submission
+  const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
     setStatus('submitting');
-    // Simulate network request
-    setTimeout(() => {
-      setStatus('success');
-      alert("Message sent! (This is a demo)");
-    }, 1500);
+
+    // These should ideally be in a .env file
+    // emailjs.sendForm('service_id', 'template_id', form.current, 'public_key')
+    
+    // For now, we simulate the call with the actual library structure
+    // Replace placeholders with your EmailJS credentials or use .env variables
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID', 
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID', 
+      form.current, 
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
+    )
+      .then((result) => {
+          console.log('SUCCESS!', result.text);
+          setStatus('success');
+          form.current.reset();
+      }, (error) => {
+          console.log('FAILED...', error.text);
+          setStatus('error');
+      });
   };
 
   return (
@@ -87,36 +104,53 @@ export default function About() {
 
           {/* Right: Contact Form */}
           <div className="contact-form-container">
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label className="form-label">Name</label>
-                <input type="text" className="form-input" placeholder="Your full name" required />
+            {status === 'success' ? (
+              <div style={{ textAlign: 'center', padding: '2rem' }}>
+                <CheckCircle size={48} color="#27ae60" style={{ marginBottom: '1rem' }} />
+                <h3>Message Sent!</h3>
+                <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                <button className="btn" onClick={() => setStatus('idle')} style={{ marginTop: '1rem' }}>
+                  Send Another Message
+                </button>
               </div>
+            ) : (
+              <form ref={form} onSubmit={sendEmail}>
+                <div className="form-group">
+                  <label className="form-label">Name</label>
+                  <input name="user_name" type="text" className="form-input" placeholder="Your full name" required />
+                </div>
 
-              <div className="form-group">
-                <label className="form-label">Email Address</label>
-                <input type="email" className="form-input" placeholder="name@example.com" required />
-              </div>
+                <div className="form-group">
+                  <label className="form-label">Email Address</label>
+                  <input name="user_email" type="email" className="form-input" placeholder="name@example.com" required />
+                </div>
 
-              <div className="form-group">
-                <label className="form-label">Service Interested In</label>
-                <select className="form-input" style={{ background: 'white' }}>
-                  <option>Ghostwriting</option>
-                  <option>Copywriting</option>
-                  <option>Editing / Proofreading</option>
-                  <option>Other</option>
-                </select>
-              </div>
+                <div className="form-group">
+                  <label className="form-label">Service Interested In</label>
+                  <select name="service" className="form-input" style={{ background: 'white' }}>
+                    <option>Ghostwriting</option>
+                    <option>Copywriting</option>
+                    <option>Editing / Proofreading</option>
+                    <option>Other</option>
+                  </select>
+                </div>
 
-              <div className="form-group">
-                <label className="form-label">Project Details</label>
-                <textarea className="form-textarea" placeholder="Tell us a little about what you are writing..." required></textarea>
-              </div>
+                <div className="form-group">
+                  <label className="form-label">Project Details</label>
+                  <textarea name="message" className="form-textarea" placeholder="Tell us a little about what you are writing..." required></textarea>
+                </div>
 
-              <button type="submit" className="btn" style={{ width: '100%', justifyContent: 'center' }}>
-                {status === 'submitting' ? 'Sending...' : 'Send Message'} <Send size={18} />
-              </button>
-            </form>
+                {status === 'error' && (
+                  <p style={{ color: '#e74c3c', marginBottom: '1rem' }}>
+                    Oops! Something went wrong. Please try again or email us directly.
+                  </p>
+                )}
+
+                <button type="submit" className="btn" style={{ width: '100%', justifyContent: 'center' }} disabled={status === 'submitting'}>
+                  {status === 'submitting' ? 'Sending...' : 'Send Message'} <Send size={18} />
+                </button>
+              </form>
+            )}
           </div>
 
         </div>
