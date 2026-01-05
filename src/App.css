@@ -1,0 +1,336 @@
+:root {
+  --primary: #2c3e50;
+  --accent: #d35400; /* Burnt orange for a "vintage book" feel */
+  --bg-light: #fdfbf7; /* Warm, off-white paper color */
+  --text-dark: #333;
+  --text-light: #666;
+}
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif; /* Serif is essential for a writer site */
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Utilities */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Buttons */
+.btn {
+  background: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.btn:hover { background: var(--accent); }
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e0dcd5;
+  background: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+}
+
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { font-family: sans-serif; font-weight: 500; }
+.nav-links a:hover { color: var(--accent); }
+
+/* Grid Layouts (General) */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Cards (General) */
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-5px); }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem;
+  color: #888;
+  border-top: 1px solid #e0dcd5;
+  margin-top: 4rem;
+}
+
+/* ---------------------------------------------------- */
+/* NEW: Split Layout for Reviews Page (Image + Text)    */
+/* ---------------------------------------------------- */
+
+.reviews-split-container {
+  display: flex;
+  gap: 3rem;
+  align-items: stretch; /* Makes both sides the same height */
+  background: white;
+  border-radius: 12px;
+  overflow: hidden; /* Ensures image corners stay rounded */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid #e0dcd5;
+}
+
+/* The Image Side */
+.reviews-image-side {
+  flex: 1;
+  min-height: 400px; /* Ensure it has height even if empty */
+}
+
+.reviews-image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers space without stretching */
+  display: block;
+}
+
+/* The Reviews List Side */
+.reviews-content-side {
+  flex: 1.2; /* Give text slightly more space than image */
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.review-item {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 2rem;
+}
+
+.review-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.review-text {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 850px) {
+  .reviews-split-container {
+    flex-direction: column;
+  }
+  .reviews-image-side {
+    min-height: 250px;
+    max-height: 300px;
+  }
+  .reviews-content-side {
+    padding: 2rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+}
+/* --- Home Page Specific Styles --- */
+
+.hero-section {
+  text-align: center;
+  padding: 5rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.hero-intro {
+  font-size: 1.25rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  font-family: sans-serif; /* Cleaner reading for intro text */
+}
+
+/* CTA Buttons Container */
+.cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Button Variants */
+.btn-primary {
+  /* Inherits base .btn styles, ensures primary color */
+  background: var(--primary);
+  color: white;
+}
+
+.btn-outline {
+  /* Transparent background with border */
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Service Card Tweaks */
+.service-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-card h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile Responsiveness for Home */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .cta-group {
+    flex-direction: column;
+    align-items: stretch; /* Buttons span full width on phone */
+  }
+  
+  .btn {
+    justify-content: center;
+  }
+}
+/* --- Portfolio / Samples Section --- */
+
+.portfolio-section {
+  margin-top: 6rem;
+  padding-top: 4rem;
+  border-top: 1px solid #e0dcd5; /* Separator line */
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.portfolio-card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  border-color: var(--accent);
+}
+
+.portfolio-content {
+  padding: 1.5rem;
+  flex: 1; /* Pushes the button to the bottom */
+}
+
+.portfolio-tag {
+  display: inline-block;
+  background: #fdfbf7;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #e8e4dd;
+}
+
+.portfolio-title {
+  font-size: 1.4rem;
+  margin: 0 0 1rem 0;
+  color: var(--primary);
+  font-family: 'Georgia', serif;
+}
+
+.portfolio-desc {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  font-family: sans-serif;
+}
+
+.portfolio-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 1rem 1.5rem;
+  background: #f9f9f9;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-top: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+.portfolio-link:hover {
+  background: var(--primary);
+  color: white;
+}
