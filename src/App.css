@@ -7,15 +7,34 @@
   --bg-light: #fdfbf7; /* Warm, off-white paper color */
   --text-dark: #333;
   --text-light: #666;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 body {
   margin: 0;
   font-family: 'Georgia', serif; /* Serif is essential for a writer site */
   background-color: var(--bg-light);
+  background-image: radial-gradient(#e0dcd5 0.5px, transparent 0.5px);
+  background-size: 20px 20px; /* Subtle paper-like dots */
   color: var(--text-dark);
   line-height: 1.6;
 }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-fade { animation: fadeIn 0.8s ease-out forwards; }
+.animate-float { animation: float 3s ease-in-out infinite; }
 
 a { 
   text-decoration: none; 
@@ -116,6 +135,11 @@ footer {
   color: white;
 }
 
+.btn-large {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+}
+
 /* Cards */
 .card {
   background: white;
@@ -135,24 +159,43 @@ footer {
    ========================================= */
 .hero-section {
   text-align: center;
-  padding: 5rem 1rem;
-  max-width: 800px;
+  padding: 8rem 1rem;
+  max-width: 900px;
   margin: 0 auto;
+  position: relative;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(211, 84, 0, 0.1);
+  color: var(--accent);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .hero-section h1 {
-  font-size: 3.5rem;
-  line-height: 1.2;
+  font-size: 4rem;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
   color: var(--primary);
+  font-weight: 900;
 }
 
 .hero-intro {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   color: #555;
-  line-height: 1.8;
-  margin-bottom: 3rem;
+  line-height: 1.6;
+  margin-bottom: 3.5rem;
   font-family: sans-serif;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-group {
@@ -161,29 +204,107 @@ footer {
   gap: 1.5rem;
 }
 
+/* Floating Elements */
+.floating-icon {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+.icon-1 { top: 10%; left: 5%; animation-delay: 0s; }
+.icon-2 { top: 20%; right: 5%; animation-delay: 1s; }
+.icon-3 { bottom: 10%; left: 15%; animation-delay: 2s; }
+
+/* Stats Section */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.stat-item h2 {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin: 0;
+}
+
+.stat-item p {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  color: #888;
+  margin: 5px 0 0 0;
+}
+
+.services-section {
+  padding: 6rem 0;
+}
+
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
 }
 
 .service-card {
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
 .service-card h3 {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Featured Quote */
+.featured-quote {
+  background: var(--primary);
+  color: white;
+  padding: 6rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  margin: 6rem 0;
+}
+
+.featured-quote blockquote {
+  font-size: 2rem;
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+.featured-quote cite {
+  font-family: sans-serif;
+  font-size: 1rem;
+  opacity: 0.7;
 }
 
 /* Mobile Home */
 @media (max-width: 768px) {
-  .hero-section h1 { font-size: 2.5rem; }
+  .hero-section h1 { font-size: 2.8rem; }
+  .hero-intro { font-size: 1.1rem; }
   .cta-group { flex-direction: column; align-items: stretch; }
+  .stats-grid { grid-template-columns: 1fr; }
 }
 
 /* =========================================
