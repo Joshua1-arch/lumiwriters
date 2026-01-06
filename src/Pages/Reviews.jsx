@@ -1,81 +1,50 @@
 import React from 'react';
-import { Star, User, ExternalLink, FileText, Quote, Sparkles } from 'lucide-react';
+import { Star, User, BookOpen } from 'lucide-react';
 
 export default function Reviews() {
   // 1. DATA: Reviews
   const reviews = [
     {
       id: 1,
-      name: "Dr. Elena Roberts",
-      role: "Academic Author",
-      text: "The developmental edit was transformative. They didn't just fix commas; they helped clarify my entire central argument.",
+      name: "Reader Review",
+      role: "Verified Purchase",
+      text: "A poignant and inspiring memoir. It reminds us that even in our darkest moments, grace can guide us to a life rich with purpose.",
       stars: 5
     },
     {
       id: 2,
       name: "Marcus Thorne",
-      role: "Fantasy Novelist",
-      text: "I was struggling with writer's block on my sequel. The ghostwriting team stepped in and perfectly captured the voices of my characters.",
+      role: "Literary Critic",
+      text: "Goddy Jedy-Agba reflects on the enduring influence of his parents and mentors. A testament to the strength of the human spirit.",
       stars: 5
     },
     {
       id: 3,
       name: "Sarah Chen",
-      role: "Startup Founder",
-      text: "LumiWriters handled the copywriting for our entire website launch. The tone was professional yet engaging.",
+      role: "Editor",
+      text: "An extraordinary journey of faith and resilience. The storytelling captivates you from the very first page.",
       stars: 5
-    }
-  ];
-
-  // 2. DATA: Portfolio Samples
-  const portfolio = [
-    {
-      id: 1,
-      title: "The Future of Sustainable Energy",
-      category: "Ghostwriting / Article",
-      description: "A 1,500-word thought leadership article written for a CEO in the renewable energy sector. Focuses on actionable insights for 2025.",
-      link: "#"
-    },
-    {
-      id: 2,
-      title: "Neon Horizon: Chapter 1",
-      category: "Fiction Sample",
-      description: "An opening chapter for a Cyberpunk novel. Demonstrates ability to build atmosphere, dialogue, and pacing.",
-      link: "#" 
-    },
-    {
-      id: 3,
-      title: "TechFlow Landing Page",
-      category: "Copywriting",
-      description: "Full website copy for a SaaS startup. Increased sign-up conversion by 40% within the first month of launch.",
-      link: "#" 
-    },
-    {
-      id: 4,
-      title: "Mental Health in the Workplace",
-      category: "Blog Post",
-      description: "SEO-optimized content designed to rank for specific keywords while providing genuine value to HR professionals.",
-      link: "#" 
     }
   ];
 
   return (
     <div className="animate-fade">
-      {/* --- SECTION 1: REVIEWS (Top Half) --- */}
+      
+      {/* --- SECTION 1: REVIEWS (Top Half - Front Cover) --- */}
       <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-        <span className="hero-badge">Testimonials</span>
-        <h1 style={{ marginBottom: '1rem', fontSize: '3rem' }}>Client Stories</h1>
-        <p style={{ color: '#666', fontSize: '1.1rem' }}>
-          Real words from the writers we've helped find their voice.
+        <span className="hero-badge">Reader Acclaim</span>
+        <h1 style={{ marginBottom: '1rem', fontSize: '3rem' }}>What People Are Saying</h1>
+        <p style={{ color: 'var(--text-light)', fontSize: '1.1rem' }}>
+          Feedback on <em>Grace Unspeakable: A Memoir of Faith, Survival, and Service</em>.
         </p>
       </div>
 
       <div className="reviews-split-container" style={{ borderRadius: '24px' }}>
-        {/* Left: Image with Overlay Icon */}
+        {/* Left: FRONT COVER IMAGE */}
         <div className="reviews-image-side" style={{ position: 'relative' }}>
           <img 
-            src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=1000&q=80" 
-            alt="Person writing in a notebook" 
+            src="/Grace.jpeg" 
+            alt="Grace Unspeakable Front Cover" 
           />
           <div style={{ 
             position: 'absolute', 
@@ -86,7 +55,7 @@ export default function Reviews() {
             borderRadius: '50%',
             boxShadow: 'var(--shadow)'
           }}>
-            <Quote size={24} color="var(--accent)" />
+            <BookOpen size={24} color="var(--accent)" />
           </div>
         </div>
 
@@ -96,16 +65,16 @@ export default function Reviews() {
             <div key={r.id} className="review-item">
               <div style={{ display: 'flex', gap: '4px', marginBottom: '1rem' }}>
                 {[...Array(r.stars)].map((_, i) => (
-                  <Star key={i} size={18} fill="#d35400" color="#d35400" />
+                  <Star key={i} size={18} fill="var(--accent)" color="var(--accent)" />
                 ))}
               </div>
-              <div className="review-text" style={{ fontSize: '1.2rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>"{r.text}"</div>
+              <div className="review-text" style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>"{r.text}"</div>
               <div className="review-author" style={{ gap: '15px' }}>
-                <div style={{ background: '#f9f9f9', padding: '10px', borderRadius: '50%' }}>
+                <div style={{ background: '#ffffff', border: '1px solid #eeeeee', padding: '10px', borderRadius: '50%' }}>
                   <User size={20} color="var(--primary)" />
                 </div>
-                <div style={{ fontSize: '1.1rem' }}>
-                  {r.name} <span style={{ fontWeight: 'normal', color: '#888', fontSize: '0.9em', display: 'block' }}>{r.role}</span>
+                <div style={{ fontSize: '1rem' }}>
+                  {r.name} <span style={{ fontWeight: 'normal', color: 'var(--text-light)', fontSize: '0.9em', display: 'block' }}>{r.role}</span>
                 </div>
               </div>
             </div>
@@ -113,32 +82,36 @@ export default function Reviews() {
         </div>
       </div>
 
-      {/* --- SECTION 2: PORTFOLIO (Bottom Half) --- */}
-      <div className="portfolio-section" style={{ marginTop: '8rem' }}>
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <span className="hero-badge">Our Work</span>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Selected Works</h2>
-          <p style={{ color: '#666', maxWidth: '600px', margin: '0 auto', fontSize: '1.1rem' }}>
-            A collection of pieces demonstrating our versatility across different tones and formats.
-          </p>
+      {/* --- SECTION 2: BOOK SYNOPSIS (Back Cover Content) --- */}
+      {/* Added 'reverse-layout' class here instead of inline style */}
+      <div className="reviews-split-container reverse-layout" style={{ marginTop: '4rem', marginBottom: '4rem', borderRadius: '24px' }}>
+        
+        {/* Right (on Desktop) / Top (on Mobile): BACK COVER IMAGE */}
+        <div className="reviews-image-side">
+          <img 
+            src="/Back.jpg" 
+            alt="Grace Unspeakable Back Cover Blurb" 
+          />
         </div>
 
-        <div className="portfolio-grid">
-          {portfolio.map((item) => (
-            <div key={item.id} className="portfolio-card" style={{ borderRadius: '16px' }}>
-              <div className="portfolio-content" style={{ padding: '2rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-                  <span className="portfolio-tag" style={{ margin: 0 }}>{item.category}</span>
-                  <Sparkles size={18} color="#e0dcd5" />
-                </div>
-                <h3 className="portfolio-title" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>{item.title}</h3>
-                <p className="portfolio-desc" style={{ lineHeight: '1.7' }}>{item.description}</p>
-              </div>
-              <a href={item.link} target="_blank" rel="noopener noreferrer" className="portfolio-link" style={{ padding: '1.5rem 2rem' }}>
-                Read Sample <ExternalLink size={16} />
-              </a>
-            </div>
-          ))}
+        {/* Left (on Desktop) / Bottom (on Mobile): SYNOPSIS TEXT */}
+        <div className="reviews-content-side">
+          <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--primary)' }}>About the Memoir</h2>
+          
+          <div style={{ color: 'var(--text-light)', fontSize: '1.05rem', lineHeight: '1.8', fontFamily: 'Georgia, serif' }}>
+            <p style={{ marginBottom: '1.5rem' }}>
+              <strong>In <em>Grace Unspeakable</em></strong>, Goddy Jedy-Agba shares an extraordinary journey of faith and resilience. 
+              After a life-threatening illness, he experiences a profound grace that not only saves his life but also redefines his purpose. 
+              With gratitude as his compass, he offers timeless wisdom and inspiration for others facing life’s challenges.
+            </p>
+            <p style={{ marginBottom: '1.5rem' }}>
+              From valleys of personal loss and struggle to peaks of leadership and service, Jedy-Agba reflects on the enduring influence 
+              of his parents, the wisdom of revered mentors, and his deep-rooted faith in God.
+            </p>
+            <p style={{ fontStyle: 'italic', color: 'var(--accent)', fontWeight: 'bold' }}>
+              "This memoir is a testament to the boundless possibilities that arise when we trust in divine grace."
+            </p>
+          </div>
         </div>
       </div>
       
