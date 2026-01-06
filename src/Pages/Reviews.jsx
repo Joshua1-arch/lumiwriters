@@ -30,7 +30,7 @@ export default function Reviews() {
   return (
     <div className="animate-fade">
       
-      {/* --- SECTION 1: REVIEWS (Top Half - Front Cover) --- */}
+      {/* --- HEADER --- */}
       <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
         <span className="hero-badge">Reader Acclaim</span>
         <h1 style={{ marginBottom: '1rem', fontSize: '3rem' }}>What People Are Saying</h1>
@@ -39,9 +39,12 @@ export default function Reviews() {
         </p>
       </div>
 
+      {/* --- REVIEWS SECTION --- */}
       <div className="reviews-split-container" style={{ borderRadius: '24px' }}>
+        
         {/* Left: FRONT COVER IMAGE */}
         <div className="reviews-image-side" style={{ position: 'relative' }}>
+          {/* Make sure your image is named Grace.jpeg in the public folder */}
           <img 
             src="/Grace.jpeg" 
             alt="Grace Unspeakable Front Cover" 
@@ -79,39 +82,6 @@ export default function Reviews() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* --- SECTION 2: BOOK SYNOPSIS (Back Cover Content) --- */}
-      {/* Added 'reverse-layout' class here instead of inline style */}
-      <div className="reviews-split-container reverse-layout" style={{ marginTop: '4rem', marginBottom: '4rem', borderRadius: '24px' }}>
-        
-        {/* Right (on Desktop) / Top (on Mobile): BACK COVER IMAGE */}
-        <div className="reviews-image-side">
-          <img 
-            src="/Back.jpg" 
-            alt="Grace Unspeakable Back Cover Blurb" 
-          />
-        </div>
-
-        {/* Left (on Desktop) / Bottom (on Mobile): SYNOPSIS TEXT */}
-        <div className="reviews-content-side">
-          <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--primary)' }}>About the Memoir</h2>
-          
-          <div style={{ color: 'var(--text-light)', fontSize: '1.05rem', lineHeight: '1.8', fontFamily: 'Georgia, serif' }}>
-            <p style={{ marginBottom: '1.5rem' }}>
-              <strong>In <em>Grace Unspeakable</em></strong>, Goddy Jedy-Agba shares an extraordinary journey of faith and resilience. 
-              After a life-threatening illness, he experiences a profound grace that not only saves his life but also redefines his purpose. 
-              With gratitude as his compass, he offers timeless wisdom and inspiration for others facing life’s challenges.
-            </p>
-            <p style={{ marginBottom: '1.5rem' }}>
-              From valleys of personal loss and struggle to peaks of leadership and service, Jedy-Agba reflects on the enduring influence 
-              of his parents, the wisdom of revered mentors, and his deep-rooted faith in God.
-            </p>
-            <p style={{ fontStyle: 'italic', color: 'var(--accent)', fontWeight: 'bold' }}>
-              "This memoir is a testament to the boundless possibilities that arise when we trust in divine grace."
-            </p>
-          </div>
         </div>
       </div>
       

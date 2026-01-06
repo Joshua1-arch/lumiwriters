@@ -22,7 +22,13 @@ const Home = () => {
 
         <div className="hero-content">
           {/* Badge */}
-          <span className="hero-badge">Author • Speaker • Strategist</span>
+          <div className="hero-badge" style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
+            <span>Author</span>
+            <Feather size={12} color="var(--accent)" />
+            <span>Speaker</span>
+            <Feather size={12} color="var(--accent)" />
+            <span>Strategist</span>
+          </div>
           
           {/* Headline */}
           <h1>Stories of Faith, <br /> Survival & <span style={{color: 'var(--accent)'}}>Grace</span></h1>
@@ -54,12 +60,6 @@ const Home = () => {
 
           {/* Right Side: Book Details */}
           <div className="book-content">
-            <div className="new-release-badge">New Release</div>
-            
-            <div style={{ display: 'flex', gap: '5px', marginBottom: '15px' }}>
-              {[1,2,3,4,5].map((i) => <Star key={i} size={18} fill="var(--accent)" color="var(--accent)" />)}
-            </div>
-
             <h2 className="book-title">Grace Unspeakable</h2>
             <p className="book-subtitle">A Memoir of Faith, Survival, and Service</p>
 
@@ -89,11 +89,15 @@ const Home = () => {
               </a>
             </div>
 
-            <div style={{ marginTop: '2rem', borderTop: '1px solid #eeeeee', paddingTop: '1rem'}}>
-              <Link to="/reviews" className="review-link-text">
-                <CheckCircle size={18} />
-                Already read it? <strong>Leave a review.</strong>
-              </Link>
+            <div style={{ marginTop: '2.5rem', borderTop: '1px solid #eeeeee', paddingTop: '1.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span style={{ fontSize: '0.95rem', fontWeight: 'bold', color: 'var(--primary)' }}>Excellent Reader Feedback</span>
+                </div>
+                <Link to="/reviews" className="review-link-text" style={{ fontWeight: 'bold', borderBottom: '2px solid var(--accent)', paddingBottom: '2px' }}>
+                  Read Reviews
+                </Link>
+              </div>
             </div>
           </div>
         </div>

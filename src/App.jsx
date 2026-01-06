@@ -44,7 +44,10 @@ function AppContent() {
       </div>
 
       <footer>
-        <p>&copy; {new Date().getFullYear()} LumiWriters. Crafted for wordsmiths.</p>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+          <Feather size={16} color="var(--accent)" />
+          <p>&copy; {new Date().getFullYear()} LumiWriters. Crafted for wordsmiths.</p>
+        </div>
       </footer>
     </div>
   );

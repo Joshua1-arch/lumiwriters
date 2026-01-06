@@ -757,26 +757,26 @@ footer {
   /* Force vertical stacking on mobile */
   .reviews-split-container, 
   .reviews-split-container.reverse-layout {
-    flex-direction: column !important;
-    height: auto !important;
+    flex-direction: column;
+    height: auto;
   }
 
   /* Adjust image container on mobile */
   .reviews-image-side {
-    width: 100% !important;
-    min-height: 350px !important; /* Give it enough space */
-    padding: 2rem !important;
+    width: 100%;
+    min-height: 300px;
+    padding: 2rem;
   }
 
   /* Make the book image look good on mobile */
   .reviews-image-side img {
-    max-width: 220px !important; /* Prevent it from being huge */
-    margin: 0 auto; /* Center it */
-    transform: rotate(0deg) !important; /* Remove rotation on mobile for cleanness */
+    max-width: 200px;
+    margin: 0 auto;
+    transform: rotate(0deg); /* Remove rotation on mobile for cleanness */
   }
 
   /* Adjust text spacing */
   .reviews-content-side {
-    padding: 2rem 1.5rem !important;
+    padding: 2rem 1.5rem;
   }
 }
