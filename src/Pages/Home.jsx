@@ -68,10 +68,17 @@ const Home = () => {
               </div>
             </div>
 
-            {/* <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#666' }}>
-              <div style={{display:'flex'}}>{[1,2,3,4,5].map(i=><Star key={i} size={14} fill="#f1c40f" color="#f1c40f"/>)}</div>
-              <span>Rated 5.0 by readers</span>
-            </div> */}
+            <div style={{ marginTop: '2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap', borderTop: '1px solid #eee', paddingTop: '1.5rem' }}>
+              {/* <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ display: 'flex', gap: '2px' }}>
+                  {[1, 2, 3, 4, 5].map(i => <Star key={i} size={16} fill="var(--accent)" color="var(--accent)" />)}
+                </div>
+                <span style={{ fontSize: '0.95rem', fontWeight: 'bold', color: 'var(--primary)' }}>5.0 Reader Rating</span>
+              </div> */}
+              <Link to="/reviews" className="btn-outline" style={{ padding: '8px 16px', fontSize: '0.9rem', border: '1px solid #ddd' }}>
+                Read Reviews
+              </Link>
+            </div>
 
           </div>
         </div>
@@ -87,17 +94,17 @@ const Home = () => {
 
           <div className="hook-grid">
             <div className="hook-item">
-              <Shield size={40} color="#d35400" style={{ marginBottom: '1rem' }} />
+              <Shield size={40} color="var(--accent)" style={{ marginBottom: '1rem' }} />
               <h3>Resilience</h3>
               <p>Discover the mental and spiritual fortitude required to face a terminal diagnosis and emerge stronger.</p>
             </div>
             <div className="hook-item">
-              <Heart size={40} color="#d35400" style={{ marginBottom: '1rem' }} />
+              <Heart size={40} color="var(--accent)" style={{ marginBottom: '1rem' }} />
               <h3>Faith</h3>
               <p>Witness how deep-rooted spirituality can anchor you when the storms of life try to sweep you away.</p>
             </div>
             <div className="hook-item">
-              <CheckCircle size={40} color="#d35400" style={{ marginBottom: '1rem' }} />
+              <CheckCircle size={40} color="var(--accent)" style={{ marginBottom: '1rem' }} />
               <h3>Leadership</h3>
               <p>Lessons on service, integrity, and mentorship from a distinguished public servant.</p>
             </div>
@@ -106,7 +113,7 @@ const Home = () => {
       </section>
 
       {/* 3. AUTHOR TEASER */}
-      <section style={{ background: '#2c3e50', color: 'white', padding: '5rem 2rem', textAlign: 'center' }}>
+      <section style={{ background: 'var(--primary)', color: 'white', padding: '5rem 2rem', textAlign: 'center' }}>
         <div className="container">
           <h2 style={{ color: 'white', marginBottom: '1rem' }}>About the Author</h2>
           <p style={{ maxWidth: '700px', margin: '0 auto 2rem auto', fontSize: '1.2rem', opacity: '0.9' }}>

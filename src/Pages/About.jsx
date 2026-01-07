@@ -102,6 +102,9 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      {/* --- PART 2: CONTACT SECTION --- */}
+
     </div>
   );
 }

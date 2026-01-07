@@ -31,7 +31,7 @@ function AppContent() {
         <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
           <Link to="/" onClick={closeMenu}>Home</Link>
           <Link to="/reviews" onClick={closeMenu}>Reviews</Link>
-          <Link to="/about" onClick={closeMenu}>About Us</Link>
+          <Link to="/about" onClick={closeMenu}>About The Author</Link>
         </div>
       </nav>
 
