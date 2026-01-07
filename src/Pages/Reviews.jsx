@@ -1,8 +1,7 @@
 import React from 'react';
-import { Star, User, BookOpen } from 'lucide-react';
+import { Star, User, Quote } from 'lucide-react';
 
 export default function Reviews() {
-  // 1. DATA: Reviews
   const reviews = [
     {
       id: 1,
@@ -28,63 +27,62 @@ export default function Reviews() {
   ];
 
   return (
-    <div className="animate-fade">
+    <div className="animate-fade reviews-page-wrapper">
       
-      {/* --- HEADER --- */}
-      <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-        <span className="hero-badge">Reader Acclaim</span>
-        <h1 style={{ marginBottom: '1rem', fontSize: '3rem' }}>What People Are Saying</h1>
-        <p style={{ color: 'var(--text-light)', fontSize: '1.1rem' }}>
-          Feedback on <em>Grace Unspeakable: A Memoir of Faith, Survival, and Service</em>.
+      {/* 1. CENTERED HERO: The Book */}
+      <div className="book-showcase-hero">
+        <span className="showcase-badge">Bestselling Memoir</span>
+        
+        {/* Book Image */}
+        <div style={{ margin: '2rem 0' }}>
+          <img 
+            src="/Grace.jpeg" 
+            alt="Grace Unspeakable Book Cover" 
+            className="book-showcase-img"
+          />
+        </div>
+
+        <h1 style={{ fontSize: '3rem', marginBottom: '1rem', color: 'var(--primary)' }}>
+          Grace Unspeakable
+        </h1>
+        <p style={{ fontSize: '1.2rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
+          See why readers across the country are finding hope and resilience in this extraordinary story.
         </p>
       </div>
 
-      {/* --- REVIEWS SECTION --- */}
-      <div className="reviews-split-container" style={{ borderRadius: '24px' }}>
-        
-        {/* Left: FRONT COVER IMAGE */}
-        <div className="reviews-image-side" style={{ position: 'relative' }}>
-          {/* Make sure your image is named Grace.jpeg in the public folder */}
-          <img 
-            src="/Grace.jpeg" 
-            alt="Grace Unspeakable Front Cover" 
-          />
-          <div style={{ 
-            position: 'absolute', 
-            top: '20px', 
-            left: '20px', 
-            background: 'var(--white)', 
-            padding: '12px', 
-            borderRadius: '50%',
-            boxShadow: 'var(--shadow)'
-          }}>
-            <BookOpen size={24} color="var(--accent)" />
-          </div>
-        </div>
+      {/* 2. GRID: The Reviews */}
+      <div className="modern-reviews-grid">
+        {reviews.map((r) => (
+          <div key={r.id} className="modern-review-card">
+            {/* Stars */}
+            <div style={{ display: 'flex', gap: '4px', marginBottom: '1.5rem' }}>
+              {[...Array(r.stars)].map((_, i) => (
+                <Star key={i} size={18} fill="var(--accent)" color="var(--accent)" />
+              ))}
+            </div>
 
-        {/* Right: Review List */}
-        <div className="reviews-content-side">
-          {reviews.map((r) => (
-            <div key={r.id} className="review-item">
-              <div style={{ display: 'flex', gap: '4px', marginBottom: '1rem' }}>
-                {[...Array(r.stars)].map((_, i) => (
-                  <Star key={i} size={18} fill="var(--accent)" color="var(--accent)" />
-                ))}
+            {/* Quote Icon */}
+            <Quote size={24} color="#e0dcd5" style={{ marginBottom: '1rem' }} />
+
+            {/* Text */}
+            <p className="modern-review-text">
+              "{r.text}"
+            </p>
+
+            {/* Author */}
+            <div className="modern-review-footer">
+              <div className="modern-avatar">
+                <User size={20} />
               </div>
-              <div className="review-text" style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>"{r.text}"</div>
-              <div className="review-author" style={{ gap: '15px' }}>
-                <div style={{ background: '#ffffff', border: '1px solid #eeeeee', padding: '10px', borderRadius: '50%' }}>
-                  <User size={20} color="var(--primary)" />
-                </div>
-                <div style={{ fontSize: '1rem' }}>
-                  {r.name} <span style={{ fontWeight: 'normal', color: 'var(--text-light)', fontSize: '0.9em', display: 'block' }}>{r.role}</span>
-                </div>
+              <div>
+                <div style={{ fontWeight: 'bold', color: 'var(--primary)' }}>{r.name}</div>
+                <div style={{ fontSize: '0.85rem', color: '#999' }}>{r.role}</div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-      
+
     </div>
   );
 }
