@@ -50,7 +50,7 @@ export default function About() {
         {/* Right: Author Bio */}
         <div style={{ flex: '1 1 400px' }}>
           <span className="hero-badge">The Author</span>
-          <h1 style={{ marginBottom: '1.5rem', fontSize: '3rem', lineHeight: '1.2' }}>Goddy Jedy-Agba, <span style={{fontSize: '1.5rem', opacity: 0.7}}>OFR</span></h1>
+          <h1 style={{ marginBottom: '1.5rem', fontSize: '3rem', lineHeight: '1.2' }}>Goddy Jedy-Agba, <span style={{fontSize: '1.5rem', opacity: 0.7}}></span></h1>
           
           <div style={{ fontSize: '1.15rem', color: '#555', lineHeight: '1.8' }}>
             <p style={{ marginBottom: '1.5rem' }}>
