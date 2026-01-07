@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  ArrowRight, BookOpen, Star, CheckCircle, Heart, Shield
+  ArrowRight, BookOpen, Star, CheckCircle, Heart, Shield, ShoppingBag
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -33,17 +33,17 @@ const Home = () => {
             
             <div className="hero-desc">
               <p>
-                <strong>Goddy Jedy-Agba</strong> faced a life-threatening illness that changed everything. 
+                <strong>Goddy Jedy-Agba, OFR</strong>, faced a life-threatening illness that changed everything. 
                 This is the extraordinary story of his survival, his deep-rooted faith, and the profound 
                 grace that redefined his purpose.
               </p>
             </div>
 
-            {/* --- NEW: PRICING DISPLAY --- */}
+            {/* --- PRICING DISPLAY --- */}
             <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem', alignItems: 'center' }}>
               <div>
                 <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', fontWeight: 'bold', letterSpacing: '1px' }}>Hardcopy</span>
-                <span style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#2c3e50' }}>₦22,000</span>
+                <span style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#2c3e50' }}>₦25,000</span>
               </div>
               <div style={{ width: '1px', height: '40px', background: '#ddd' }}></div>
               <div>
@@ -54,11 +54,17 @@ const Home = () => {
 
             {/* Buy Buttons */}
             <div className="buy-buttons-container">
+              {/* Primary: Selar */}
               <a href="#" className="main-buy-btn">
                 <SelarIcon /> Order on Selar (Nigeria)
               </a>
               
+              {/* Secondary Options */}
               <div className="secondary-buttons">
+                {/* Rovingheights Button Added */}
+                <a href="https://rhbooks.com.ng/product/grace-unspeakable-a-memoir/" className="sec-btn" target="_blank" rel="noopener noreferrer">
+                  <ShoppingBag size={20} /> Rovingheights
+                </a>
                 <a href="#" className="sec-btn">
                   <AmazonIcon /> Amazon
                 </a>
@@ -68,17 +74,10 @@ const Home = () => {
               </div>
             </div>
 
-            <div style={{ marginTop: '2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap', borderTop: '1px solid #eee', paddingTop: '1.5rem' }}>
-              {/* <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <div style={{ display: 'flex', gap: '2px' }}>
-                  {[1, 2, 3, 4, 5].map(i => <Star key={i} size={16} fill="var(--accent)" color="var(--accent)" />)}
-                </div>
-                <span style={{ fontSize: '0.95rem', fontWeight: 'bold', color: 'var(--primary)' }}>5.0 Reader Rating</span>
-              </div> */}
-              <Link to="/reviews" className="btn-outline" style={{ padding: '8px 16px', fontSize: '0.9rem', border: '1px solid #ddd' }}>
-                Read Reviews
-              </Link>
-            </div>
+            {/* <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#666' }}>
+              <div style={{display:'flex'}}>{[1,2,3,4,5].map(i=><Star key={i} size={14} fill="#f1c40f" color="#f1c40f"/>)}</div>
+              <span>Rated 5.0 by readers</span>
+            </div> */}
 
           </div>
         </div>
@@ -94,17 +93,17 @@ const Home = () => {
 
           <div className="hook-grid">
             <div className="hook-item">
-              <Shield size={40} color="var(--accent)" style={{ marginBottom: '1rem' }} />
+              <Shield size={40} color="#d35400" style={{ marginBottom: '1rem' }} />
               <h3>Resilience</h3>
               <p>Discover the mental and spiritual fortitude required to face a terminal diagnosis and emerge stronger.</p>
             </div>
             <div className="hook-item">
-              <Heart size={40} color="var(--accent)" style={{ marginBottom: '1rem' }} />
+              <Heart size={40} color="#d35400" style={{ marginBottom: '1rem' }} />
               <h3>Faith</h3>
               <p>Witness how deep-rooted spirituality can anchor you when the storms of life try to sweep you away.</p>
             </div>
             <div className="hook-item">
-              <CheckCircle size={40} color="var(--accent)" style={{ marginBottom: '1rem' }} />
+              <CheckCircle size={40} color="#d35400" style={{ marginBottom: '1rem' }} />
               <h3>Leadership</h3>
               <p>Lessons on service, integrity, and mentorship from a distinguished public servant.</p>
             </div>
@@ -113,14 +112,15 @@ const Home = () => {
       </section>
 
       {/* 3. AUTHOR TEASER */}
-      <section style={{ background: 'var(--primary)', color: 'white', padding: '5rem 2rem', textAlign: 'center' }}>
+      <section style={{ background: '#1a2a3a', color: 'white', padding: '5rem 2rem', textAlign: 'center' }}>
         <div className="container">
-          <h2 style={{ color: 'white', marginBottom: '1rem' }}>About the Author</h2>
-          <p style={{ maxWidth: '700px', margin: '0 auto 2rem auto', fontSize: '1.2rem', opacity: '0.9' }}>
-            Goddy Jedy-Agba shares his journey not for applause, but to be a beacon of hope for anyone struggling to find light in the darkness.
+          <h2 style={{ color: 'white', marginBottom: '1rem' }}>Goddy Jedy-Agba, <span style={{opacity: 0.7}}>OFR</span></h2>
+          <p style={{ maxWidth: '800px', margin: '0 auto 2rem auto', fontSize: '1.2rem', opacity: '0.9', lineHeight: '1.6' }}>
+            Former Minister of State for Power and seasoned technocrat with over 30 years of service. 
+            A visionary leader dedicated to governance, agriculture, and the power of principled living.
           </p>
           <Link to="/about" className="btn btn-outline" style={{ color: 'white', borderColor: 'white' }}>
-            Read Full Bio <ArrowRight size={18} />
+            Learn More <ArrowRight size={18} />
           </Link>
         </div>
       </section>
@@ -128,10 +128,10 @@ const Home = () => {
       {/* 4. FINAL CTA */}
       <section style={{ padding: '5rem 2rem', textAlign: 'center', background: '#fdfbf7' }}>
         <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Begin The Journey Today</h2>
-        <p style={{ marginBottom: '2rem', color: '#666' }}>Available in Hardcopy (₦22,000) and eBook (₦18,000).</p>
+        <p style={{ marginBottom: '2rem', color: '#666' }}>Available in Hardcopy (₦25,000) and eBook (₦18,000).</p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <a href="#" className="btn btn-primary" style={{ padding: '1rem 2rem' }}>Buy Now on Selar</a>
-          <a href="#" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>Get on Amazon</a>
+          <a href="https://rhbooks.com.ng/product/grace-unspeakable-a-memoir/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>Buy on Rovingheights</a>
         </div>
       </section>
 

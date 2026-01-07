@@ -1,40 +1,14 @@
-import React, { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import React from 'react';
 import { 
-  Mail, Clock, CheckCircle, Send, Linkedin, Twitter, Instagram,
-  AlertCircle, BookOpen, Award, User
+  BookOpen, Award, User, Feather
 } from 'lucide-react';
 
 export default function About() {
-  const form = useRef();
-  // Simple state to handle form submission
-  const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setStatus('submitting');
-
-    emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID', 
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID', 
-      form.current, 
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
-    )
-      .then((result) => {
-          console.log('SUCCESS!', result.text);
-          setStatus('success');
-          form.current.reset();
-      }, (error) => {
-          console.log('FAILED...', error.text);
-          setStatus('error');
-      });
-  };
-
   return (
-    <div className="animate-fade">
+    <div className="animate-fade reviews-page-wrapper">
       
-      {/* --- PART 1: ABOUT THE AUTHOR (Replaced Section) --- */}
-      <div style={{ display: 'flex', gap: '4rem', alignItems: 'center', flexWrap: 'wrap', marginBottom: '6rem' }}>
+      {/* --- PART 1: ABOUT THE AUTHOR --- */}
+      <div style={{ display: 'flex', gap: '4rem', alignItems: 'center', flexWrap: 'wrap', marginBottom: '4rem' }}>
         
         {/* Left: Author Image */}
         <div style={{ flex: '1 1 350px', display: 'flex', justifyContent: 'center' }}>
@@ -76,17 +50,17 @@ export default function About() {
         {/* Right: Author Bio */}
         <div style={{ flex: '1 1 400px' }}>
           <span className="hero-badge">The Author</span>
-          <h1 style={{ marginBottom: '1.5rem', fontSize: '3rem', lineHeight: '1.2' }}>Goddy Jedy-Agba</h1>
+          <h1 style={{ marginBottom: '1.5rem', fontSize: '3rem', lineHeight: '1.2' }}>Goddy Jedy-Agba, <span style={{fontSize: '1.5rem', opacity: 0.7}}>OFR</span></h1>
           
           <div style={{ fontSize: '1.15rem', color: '#555', lineHeight: '1.8' }}>
             <p style={{ marginBottom: '1.5rem' }}>
-              <strong>Goddy Jedy-Agba</strong> is a distinguished public servant, leader, and a testament to the power of resilience. With a career defined by service and integrity, he has touched countless lives through his leadership and mentorship.
+              <strong>Goddy Jedy-Agba, OFR</strong>, is a former Minister of State for Power, seasoned technocrat, and accomplished public servant with over three decades of experience in governance, oil and gas, and agriculture. 
             </p>
             <p style={{ marginBottom: '1.5rem' }}>
-              In his memoir, <em>Grace Unspeakable</em>, he steps beyond his public persona to share a deeply personal journey. After facing a life-threatening illness that tested his physical and spiritual limits, he emerged with a renewed sense of purpose and a profound understanding of divine grace.
+              He served as Group General Manager in the Crude Oil Marketing Division at NNPC and later founded Godilogo Farms, empowering thousands of rural farmers. Honoured nationally for his integrity and leadership, he is also the author of <em>Stepping Forward with Uti J.D. Agba</em>, a tribute to legacy, service, and principled living.
             </p>
             <p>
-              He writes not just to tell his story, but to inspire others navigating their own valleys of uncertainty. His life is a living evidence that with faith, gratitude, and the support of loved ones, the human spirit can overcome insurmountable odds.
+              Beyond his public persona, his memoir <em>Grace Unspeakable</em> shares a deeply personal journey of faith and resilience after a life-threatening illness, offering a narrative of profound grace and renewed purpose.
             </p>
           </div>
 
@@ -103,7 +77,14 @@ export default function About() {
         </div>
       </div>
 
-      {/* --- PART 2: CONTACT SECTION --- */}
+      {/* --- PART 2: THE VISION --- */}
+      <div style={{ textAlign: 'center', background: '#fdfbf7', padding: '4rem 2rem', borderRadius: '24px', border: '1px solid #eee' }}>
+        <Feather size={40} color="var(--accent)" style={{ marginBottom: '1.5rem' }} />
+        <h2 style={{ fontSize: '2rem', marginBottom: '1rem', fontWeight: '900' }}>Resilience in Every Page</h2>
+        <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--text-light)', fontSize: '1.1rem', lineHeight: '1.7' }}>
+          Goddy Jedy-Agba's story is one of faith and survival. Through his writing and public service, he continues to inspire a generation to lead with grace and integrity.
+        </p>
+      </div>
 
     </div>
   );

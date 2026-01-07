@@ -42,10 +42,10 @@ export default function Reviews() {
           />
         </div>
 
-        <h1 style={{ fontSize: '3rem', marginBottom: '1rem', color: 'var(--primary)' }}>
+        <h1 className="showcase-title">
           Grace Unspeakable
         </h1>
-        <p style={{ fontSize: '1.2rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
+        <p className="showcase-desc">
           See why readers across the country are finding hope and resilience in this extraordinary story.
         </p>
       </div>
