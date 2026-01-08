@@ -465,3 +465,39 @@ footer {
   margin-top: 4rem;
   font-size: 0.9rem;
 }
+/* =========================================
+   FIX FOR "ABOUT THE BOOK" SECTION
+   ========================================= */
+
+/* 1. Ensure text is NOT centered, but readable left-aligned */
+.about-book-content {
+  text-align: left !important;
+  width: 100%;
+}
+
+.about-book-content p {
+  text-align: left !important;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* 2. MOBILE FIX: Remove the "Squish" */
+@media (max-width: 768px) {
+  /* Target the specific section padding to be smaller */
+  .about-book-section {
+    padding: 3rem 1rem !important; /* Less vertical, much less horizontal padding */
+  }
+
+  /* Remove container padding just for this section to prevent double-padding */
+  .about-book-section .container {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  /* Make text fully justify so it looks like a clean block */
+  .about-book-content p {
+    text-align: justify !important; 
+    font-size: 1.05rem; /* Slightly smaller for mobile readability */
+    line-height: 1.6;
+  }
+}

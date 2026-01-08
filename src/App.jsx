@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Feather, Menu, X } from 'lucide-react';
+import { BookOpen, Menu, X } from 'lucide-react'; // Updated imports
 import Home from './Pages/Home';
 import Reviews from './Pages/Reviews';
 import About from './Pages/About';
@@ -15,8 +15,10 @@ function AppContent() {
   return (
     <div className="App">
       <nav>
+        {/* UPDATED LOGO SECTION */}
         <Link to="/" className="logo" onClick={closeMenu}>
-          <Feather size={24} /> LumiWriters
+          <BookOpen size={24} color="var(--accent)" />
+          <span style={{ marginLeft: '5px' }}>Grace Unspeakable</span>
         </Link>
         
         {/* Mobile Menu Toggle */}
@@ -35,7 +37,8 @@ function AppContent() {
         </div>
       </nav>
 
-      <div className="container">
+      {/* Main Content Area - Padding handled by App.css container if needed */}
+      <div> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/reviews" element={<Reviews />} />
@@ -43,10 +46,15 @@ function AppContent() {
         </Routes>
       </div>
 
+      {/* UPDATED FOOTER */}
       <footer>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-          <Feather size={16} color="var(--accent)" />
-          <p>&copy; {new Date().getFullYear()} LumiWriters. Crafted for wordsmiths.</p>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '5px' }}>
+          <p style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0 }}>
+            &copy; {new Date().getFullYear()} Goddy Jedy-Agba. All rights reserved.
+          </p>
+          <p style={{ fontSize: '0.85rem', color: '#888', margin: 0 }}>
+            Grace Unspeakable: A Memoir of Faith, Survival, and Service.
+          </p>
         </div>
       </footer>
     </div>
