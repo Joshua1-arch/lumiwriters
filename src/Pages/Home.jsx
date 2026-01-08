@@ -55,7 +55,7 @@ const Home = () => {
             {/* Buy Buttons */}
             <div className="buy-buttons-container">
               {/* Primary: Selar */}
-              <a href="#" className="main-buy-btn">
+              <a href="https://selar.com/902j274843" className="main-buy-btn">
                 <SelarIcon /> Order on Selar (Nigeria)
               </a>
               
