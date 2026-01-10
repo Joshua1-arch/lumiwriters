@@ -152,9 +152,9 @@ const Home = () => {
       {/* 5. FINAL CTA */}
       <section style={{ padding: '5rem 2rem', textAlign: 'center', background: '#fdfbf7' }}>
         <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Begin The Journey Today</h2>
-        <p style={{ marginBottom: '2rem', color: '#666' }}>Available in Hardcopy (₦22,000) and eBook (₦18,000).</p>
+        <p style={{ marginBottom: '2rem', color: '#666' }}>Available in Hardcopy (₦25,000) and eBook (₦18,000).</p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-          <a href="#" className="btn btn-primary" style={{ padding: '1rem 2rem' }}>Buy Now on Selar</a>
+          <a href="https://selar.com/902j274843" className="btn btn-primary" style={{ padding: '1rem 2rem' }}>Buy Now on Selar</a>
           <a href="https://rhbooks.com.ng/product/grace-unspeakable-a-memoir/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>Buy on Rovingheights</a>
         </div>
       </section>
