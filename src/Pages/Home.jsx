@@ -42,7 +42,7 @@ const Home = () => {
             <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem', alignItems: 'center' }}>
               <div>
                 <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', fontWeight: 'bold', letterSpacing: '1px' }}>Hardcopy</span>
-                <span style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#2c3e50' }}>₦22,000</span>
+                <span style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#2c3e50' }}>₦25,000</span>
               </div>
               <div style={{ width: '1px', height: '40px', background: '#ddd' }}></div>
               <div>
@@ -53,7 +53,7 @@ const Home = () => {
 
             {/* Buy Buttons */}
             <div className="buy-buttons-container">
-              <a href="#" className="main-buy-btn">
+              <a href="https://selar.com/902j274843" className="main-buy-btn">
                 <SelarIcon /> Order on Selar (Nigeria)
               </a>
               
