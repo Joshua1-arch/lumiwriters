@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  ArrowRight, BookOpen, Star, CheckCircle, Heart, Shield, ShoppingBag
+  ArrowRight, BookOpen, CheckCircle, Heart, Shield, ShoppingBag
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -9,6 +9,12 @@ const SelarIcon = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="cu
 const AmazonIcon = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.5 7.5c-3.5 0-6.5 2.5-6.5 6s3 6 6.5 6c2.5 0 4.5-1.5 5.5-3.5.5-1 1-1.5 2-1.5.5 0 1 .5 1 1 0 1.5-2 3.5-3.5 4.5-1.5 1-3.5 1.5-5.5 1.5-5 0-9-4-9-9s4-9 9-9c2.5 0 4.5.5 6 2 .5.5.5 1.5 0 2-.5.5-1.5.5-2 0-1-1-2.5-1.5-4-1.5z"/></svg>;
 
 const Home = () => {
+  // Define the gradient variable for reuse in inline styles
+  const bgGradient = 'linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%)';
+  
+  // CHANGED: Use the new Royal Blue accent for icons so they don't fight the background
+  const iconColor = "#0056b3"; 
+
   return (
     <div className="animate-fade">
       
@@ -42,12 +48,12 @@ const Home = () => {
             <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem', alignItems: 'center' }}>
               <div>
                 <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', fontWeight: 'bold', letterSpacing: '1px' }}>Hardcopy</span>
-                <span style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#2c3e50' }}>₦25,000</span>
+                <span style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#0a192f' }}>₦25,000</span>
               </div>
-              <div style={{ width: '1px', height: '40px', background: '#ddd' }}></div>
+              <div style={{ width: '1px', height: '40px', background: '#dae8f5' }}></div>
               <div>
                 <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', fontWeight: 'bold', letterSpacing: '1px' }}>Ebook</span>
-                <span style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#2c3e50' }}>₦18,000</span>
+                <span style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#0a192f' }}>₦18,000</span>
               </div>
             </div>
 
@@ -69,16 +75,14 @@ const Home = () => {
                 </a>
               </div>
             </div>
-
-
           </div>
         </div>
       </section>
 
-      {/* 2. ABOUT THE BOOK (UPDATED CLASS) */}
-      <section className="about-book-section" style={{ padding: '6rem 2rem', background: '#fff' }}>
+      {/* 2. ABOUT THE BOOK */}
+      <section className="about-book-section" style={{ padding: '6rem 2rem', background: bgGradient }}>
         <div className="container" style={{ maxWidth: '900px' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '2.5rem', textAlign: 'center', color: '#2c3e50' }}>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '2.5rem', textAlign: 'center', color: '#0a192f' }}>
             About the Book
           </h2>
           
@@ -107,10 +111,10 @@ const Home = () => {
       </section>
 
       {/* 3. THE HOOK: Why Read This? */}
-      <section className="hook-section-bg">
+      <section className="hook-section-bg" style={{ padding: '6rem 2rem', background: bgGradient }}>
         <div className="hook-card-wrapper">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#000' }}>Why You Need To Read This Book</h2>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0a192f' }}>Why You Need To Read This Book</h2>
             <p style={{ color: '#666', maxWidth: '600px', margin: '0 auto' }}>
               More than just a biography, this is a roadmap for navigating life's darkest valleys.
             </p>
@@ -118,17 +122,17 @@ const Home = () => {
 
           <div className="hook-grid">
             <div className="hook-item">
-              <Shield size={40} color="#d35400" style={{ marginBottom: '1rem' }} />
+              <Shield size={40} color={iconColor} style={{ marginBottom: '1rem' }} />
               <h3>Resilience</h3>
               <p>Discover the mental and spiritual fortitude required to face a terminal diagnosis and emerge stronger.</p>
             </div>
             <div className="hook-item">
-              <Heart size={40} color="#d35400" style={{ marginBottom: '1rem' }} />
+              <Heart size={40} color={iconColor} style={{ marginBottom: '1rem' }} />
               <h3>Faith</h3>
               <p>Witness how deep-rooted spirituality can anchor you when the storms of life try to sweep you away.</p>
             </div>
             <div className="hook-item">
-              <CheckCircle size={40} color="#d35400" style={{ marginBottom: '1rem' }} />
+              <CheckCircle size={40} color={iconColor} style={{ marginBottom: '1rem' }} />
               <h3>Leadership</h3>
               <p>Lessons on service, integrity, and mentorship from a distinguished public servant.</p>
             </div>
@@ -136,8 +140,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 4. AUTHOR TEASER */}
-      <section style={{ background: '#2c3e50', color: 'white', padding: '5rem 2rem', textAlign: 'center' }}>
+      {/* 4. AUTHOR TEASER (Dark Blue Background) */}
+      <section style={{ background: '#0a192f', color: 'white', padding: '5rem 2rem', textAlign: 'center' }}>
         <div className="container">
           <h2 style={{ color: 'white', marginBottom: '1rem' }}>About the Author</h2>
           <p style={{ maxWidth: '700px', margin: '0 auto 2rem auto', fontSize: '1.2rem', opacity: '0.9' }}>
@@ -150,7 +154,7 @@ const Home = () => {
       </section>
 
       {/* 5. FINAL CTA */}
-      <section style={{ padding: '5rem 2rem', textAlign: 'center', background: '#fdfbf7' }}>
+      <section style={{ padding: '5rem 2rem', textAlign: 'center', background: bgGradient }}>
         <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Begin The Journey Today</h2>
         <p style={{ marginBottom: '2rem', color: '#666' }}>Available in Hardcopy (₦25,000) and eBook (₦18,000).</p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>

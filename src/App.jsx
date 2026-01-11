@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { BookOpen, Menu, X } from 'lucide-react'; // Updated imports
+import { Menu, X } from 'lucide-react'; // Ensure X is imported
 import Home from './Pages/Home';
 import Reviews from './Pages/Reviews';
 import About from './Pages/About';
@@ -15,29 +15,44 @@ function AppContent() {
   return (
     <div className="App">
       <nav>
-        {/* UPDATED LOGO SECTION */}
+        {/* LOGO */}
         <Link to="/" className="logo" onClick={closeMenu}>
-          <BookOpen size={24} color="var(--accent)" />
-          <span style={{ marginLeft: '5px' }}>Grace Unspeakable</span>
+          <img 
+            src="/Grace.png" 
+            alt="Grace Unspeakable" 
+            style={{ 
+              height: '50px', 
+              width: 'auto', 
+              objectFit: 'contain' 
+            }} 
+          />
         </Link>
         
-        {/* Mobile Menu Toggle */}
+        {/* MAIN TOGGLE (Visible on Navbar) */}
         <button 
           className="menu-toggle" 
           onClick={toggleMenu}
           aria-label="Toggle navigation"
         >
+          {/* This switches icon based on state */}
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
         <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+          
+          {/* --- NEW ADDITION: Close Icon inside the menu --- */}
+          <div className="mobile-menu-close-icon" onClick={closeMenu}>
+            <X size={30} />
+          </div>
+          {/* ----------------------------------------------- */}
+
           <Link to="/" onClick={closeMenu}>Home</Link>
           <Link to="/reviews" onClick={closeMenu}>Reviews</Link>
           <Link to="/about" onClick={closeMenu}>About The Author</Link>
         </div>
       </nav>
 
-      {/* Main Content Area - Padding handled by App.css container if needed */}
+      {/* Main Content */}
       <div> 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -46,7 +61,7 @@ function AppContent() {
         </Routes>
       </div>
 
-      {/* UPDATED FOOTER */}
+      {/* Footer */}
       <footer>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '5px' }}>
           <p style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0 }}>

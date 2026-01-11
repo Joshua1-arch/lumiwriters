@@ -2,13 +2,20 @@
    1. VARIABLES & RESET
    ========================================= */
 :root {
-  --primary: #000000;
-  --accent: #e67e22; /* Burnt Orange for Sales Buttons */
-  --bg-light: #ffffff;
-  --text-dark: #222222;
-  --text-light: #555555;
+  /* Softened Black to a Very Dark Navy */
+  --primary: #0a192f; 
+  
+  /* Royal Blue to blend with the background */
+  --accent: #0056b3; 
+  
+  --bg-light: #f0f8ff; 
+  
+  /* Cool slate gray text */
+  --text-dark: #1e293b;
+  --text-light: #475569;
+  
   --white: #ffffff;
-  --shadow: 0 10px 40px rgba(0,0,0,0.08);
+  --shadow: 0 10px 40px rgba(0, 50, 100, 0.08);
 }
 
 * { box-sizing: border-box; }
@@ -17,8 +24,8 @@ body {
   margin: 0;
   font-family: 'Georgia', serif;
   background-color: var(--bg-light);
-  /* Subtle paper texture */
-  background-image: radial-gradient(#eeeeee 0.5px, transparent 0.5px);
+  /* Texture dots */
+  background-image: radial-gradient(#dceefb 0.5px, transparent 0.5px);
   background-size: 20px 20px;
   color: var(--text-dark);
   line-height: 1.6;
@@ -46,8 +53,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  border-bottom: 1px solid #eee;
-  background: white;
+  border-bottom: 1px solid #dae8f5; 
+  background: var(--bg-light); 
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -63,14 +70,18 @@ nav {
 }
 
 .nav-links { display: flex; gap: 2rem; }
-.nav-links a { font-family: sans-serif; font-weight: 500; transition: color 0.2s; }
+.nav-links a { font-family: sans-serif; font-weight: 500; transition: color 0.2s; color: var(--text-dark); }
 .nav-links a:hover { color: var(--accent); }
 
-/* Mobile Menu */
-.menu-toggle { display: none; background: none; border: none; cursor: pointer; }
+/* Mobile Menu Toggle Button (Visible on Navbar) */
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--primary); }
+
+/* Default state for the internal close icon (Hidden on Desktop) */
+.mobile-menu-close-icon { display: none; }
 
 @media (max-width: 768px) {
   .menu-toggle { display: block; }
+  
   .nav-links {
     position: fixed; top: 0; right: -100%; width: 80%; height: 100vh;
     background: white; flex-direction: column; justify-content: center; align-items: center;
@@ -78,6 +89,23 @@ nav {
   }
   .nav-links.active { right: 0; }
   .nav-links a { font-size: 1.5rem; }
+
+  /* --- NEW: Close Icon Positioned Top Right --- */
+  .mobile-menu-close-icon {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: var(--accent);
+    background: rgba(240, 248, 255, 0.8);
+    padding: 5px;
+    border-radius: 50%;
+    z-index: 1100;
+  }
+  .mobile-menu-close-icon:hover {
+    background: #dae8f5;
+  }
 }
 
 /* =========================================
@@ -97,23 +125,23 @@ nav {
   border: none;
 }
 
-.btn-primary { background: var(--primary); color: white; }
-.btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: var(--primary); transform: translateY(-2px); }
 
-.btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
-.btn-outline:hover { background: var(--primary); color: white; }
+.btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+.btn-outline:hover { background: var(--accent); color: white; }
 
 /* =========================================
    4. HOME PAGE: SALES HERO
    ========================================= */
 .sales-hero {
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #fff 0%, #fdfbf7 100%);
+  background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
   min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #dae8f5;
 }
 
 .hero-container {
@@ -130,8 +158,7 @@ nav {
   width: 100%;
   max-width: 420px;
   border-radius: 8px;
-  /* Realistic Book Shadow */
-  box-shadow: 20px 20px 50px rgba(0,0,0,0.2), -2px -2px 10px rgba(255,255,255,0.8);
+  box-shadow: 20px 20px 50px rgba(0, 50, 100, 0.15), -2px -2px 10px rgba(255,255,255,0.8);
   transform: rotate(-3deg);
   transition: transform 0.5s ease;
 }
@@ -165,7 +192,7 @@ nav {
 .hero-subtitle {
   font-size: 1.5rem;
   font-style: italic;
-  color: #666;
+  color: var(--text-light);
   margin-bottom: 2rem;
 }
 
@@ -182,21 +209,21 @@ nav {
 .buy-buttons-container { display: flex; flex-direction: column; gap: 1rem; }
 
 .main-buy-btn {
-  background: #5a2e98; /* Selar Purple */
+  background: var(--accent); 
   color: white;
   padding: 1.2rem;
   border-radius: 8px;
   font-weight: bold;
   font-size: 1.1rem;
   font-family: sans-serif;
-  box-shadow: 0 4px 15px rgba(90, 46, 152, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
   transition: transform 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-.main-buy-btn:hover { transform: translateY(-3px); background: #4a2480; }
+.main-buy-btn:hover { transform: translateY(-3px); background: var(--primary); }
 
 .secondary-buttons { display: flex; gap: 1rem; }
 
@@ -206,16 +233,16 @@ nav {
   border-radius: 8px;
   font-weight: bold;
   font-family: sans-serif;
-  border: 1px solid #ddd;
+  border: 1px solid #dae8f5;
   background: white;
-  color: #333;
+  color: var(--text-dark);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   transition: all 0.2s;
 }
-.sec-btn:hover { background: #f5f5f5; border-color: #ccc; }
+.sec-btn:hover { background: #f8fbff; border-color: var(--accent); color: var(--accent); }
 
 /* Mobile Sales Hero */
 @media (max-width: 900px) {
@@ -227,7 +254,7 @@ nav {
 }
 
 /* =========================================
-   5. HOME PAGE: "THE HOOK" (Fixed Responsiveness)
+   5. HOME PAGE: "THE HOOK"
    ========================================= */
 .hook-section {
   padding: 6rem 2rem;
@@ -237,16 +264,13 @@ nav {
 
 .hook-grid {
   display: grid;
-  /* FIX: Lowered min-width to 250px so it fits small phones */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 3rem;
   max-width: 1100px;
   margin: 4rem auto 0;
 }
 
-.hook-item {
-  padding: 1rem;
-}
+.hook-item { padding: 1rem; }
 
 .hook-item h3 {
   color: var(--primary);
@@ -259,13 +283,12 @@ nav {
   line-height: 1.6;
 }
 
-/* Force stack on very small screens */
 @media (max-width: 600px) {
   .hook-grid { grid-template-columns: 1fr; gap: 4rem; }
 }
 
 /* =========================================
-   6. REVIEWS PAGE (MODERN SHOWCASE)
+   6. REVIEWS PAGE
    ========================================= */
 .reviews-page-wrapper {
   padding: 4rem 2rem;
@@ -273,13 +296,10 @@ nav {
   margin: 0 auto;
 }
 
-.book-showcase-hero {
-  text-align: center;
-  margin-bottom: 4rem;
-}
+.book-showcase-hero { text-align: center; margin-bottom: 4rem; }
 
 .showcase-badge {
-  background: rgba(230, 126, 34, 0.1);
+  background: #e0f2fe;
   color: var(--accent);
   padding: 8px 16px;
   border-radius: 4px;
@@ -291,81 +311,48 @@ nav {
 }
 
 .book-showcase-img {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 8px;
-  box-shadow: 15px 15px 40px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
+  width: 100%; max-width: 320px; border-radius: 8px;
+  box-shadow: 15px 15px 40px rgba(0,0,0,0.15); transition: transform 0.3s ease;
 }
 
 .showcase-title {
-  font-size: 3.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--primary);
-  line-height: 1.1;
-  font-weight: 900;
-  letter-spacing: -1px;
+  font-size: 3.5rem; margin-top: 1.5rem; margin-bottom: 1rem;
+  color: var(--primary); line-height: 1.1; font-weight: 900; letter-spacing: -1px;
 }
 
 .showcase-desc {
-  font-size: 1.25rem;
-  color: var(--text-light);
-  max-width: 650px;
-  margin: 0 auto;
-  line-height: 1.8;
+  font-size: 1.25rem; color: var(--text-light); max-width: 650px;
+  margin: 0 auto; line-height: 1.8;
 }
 
 .modern-reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  margin-top: 4rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem; margin-top: 4rem;
 }
 
 .modern-review-card {
-  background: white;
-  padding: 3rem 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-  border: 1px solid #eee;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: white; padding: 3rem 2.5rem; border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #dae8f5;
+  display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .modern-review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 50, 100, 0.08);
 }
 
 .modern-review-text {
-  font-family: 'Georgia', serif;
-  font-style: italic;
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: #333;
-  margin-bottom: 2.5rem;
-  flex: 1;
+  font-family: 'Georgia', serif; font-style: italic; font-size: 1.15rem;
+  line-height: 1.8; color: var(--text-dark); margin-bottom: 2.5rem; flex: 1;
 }
 
 .modern-review-footer {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding-top: 1.5rem;
-  border-top: 1px solid #f5f5f5;
+  display: flex; align-items: center; gap: 15px; padding-top: 1.5rem;
+  border-top: 1px solid #f0f8ff;
 }
 
 .modern-avatar {
-  width: 45px;
-  height: 45px;
-  background: #f0f0f0;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #888;
+  width: 45px; height: 45px; background: #f0f8ff; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; color: var(--accent);
 }
 
 @media (max-width: 600px) {
@@ -378,30 +365,21 @@ nav {
 }
 
 /* =========================================
-   7. CONTACT PAGE
+   7. CONTACT PAGE & FOOTER
    ========================================= */
 .contact-section { margin-top: 4rem; }
 .contact-split { display: flex; gap: 4rem; align-items: flex-start; }
 .contact-info { flex: 1; }
 
 .contact-form-container {
-  flex: 1.5;
-  background: white;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  border: 1px solid #eee;
+  flex: 1.5; background: white; padding: 2.5rem; border-radius: 12px;
+  box-shadow: var(--shadow); border: 1px solid #dae8f5;
 }
 
 .form-input, .form-textarea {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  background: #fdfbf7;
+  width: 100%; padding: 14px; border: 1px solid #dae8f5;
+  border-radius: 6px; font-family: inherit; font-size: 1rem;
+  margin-bottom: 1.5rem; background: #f8fbff;
 }
 .form-label { display: block; margin-bottom: 0.5rem; font-weight: bold; font-family: sans-serif; }
 .form-textarea { min-height: 150px; resize: vertical; }
@@ -411,93 +389,26 @@ nav {
   .contact-info, .contact-form-container { width: 100%; }
 }
 
-.social-links {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
+.social-links { display: flex; gap: 1.5rem; margin-top: 1rem; }
+.social-icon { color: #888; transition: all 0.2s ease; cursor: pointer; }
+.social-icon:hover { color: var(--accent); transform: translateY(-3px); }
+.contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; color: var(--text-dark); }
+.status-box { background: #f8fbff; border: 1px solid #dae8f5; padding: 1.2rem; border-radius: 8px; margin: 2rem 0; }
+.status-row { display: flex; align-items: center; gap: 8px; color: #27ae60; font-weight: bold; font-size: 0.9rem; margin-bottom: 5px; }
 
-.social-icon {
-  color: #888;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.social-icon:hover {
-  color: var(--accent);
-  transform: translateY(-3px);
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 1rem;
-  color: var(--text-dark);
-}
-
-.status-box {
-  background: #fdfbf7;
-  border: 1px solid #eee;
-  padding: 1.2rem;
-  border-radius: 8px;
-  margin: 2rem 0;
-}
-
-.status-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #27ae60;
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-bottom: 5px;
-}
-
-/* =========================================
-   8. FOOTER
-   ========================================= */
 footer {
-  text-align: center;
-  padding: 3rem;
-  color: var(--text-light);
-  border-top: 1px solid #eee;
-  margin-top: 4rem;
-  font-size: 0.9rem;
+  text-align: center; padding: 3rem; color: var(--text-light);
+  border-top: 1px solid #dae8f5; margin-top: 4rem; font-size: 0.9rem;
 }
+
 /* =========================================
    FIX FOR "ABOUT THE BOOK" SECTION
    ========================================= */
+.about-book-content { text-align: left !important; width: 100%; }
+.about-book-content p { text-align: left !important; margin-bottom: 1.5rem; font-size: 1.1rem; }
 
-/* 1. Ensure text is NOT centered, but readable left-aligned */
-.about-book-content {
-  text-align: left !important;
-  width: 100%;
-}
-
-.about-book-content p {
-  text-align: left !important;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-}
-
-/* 2. MOBILE FIX: Remove the "Squish" */
 @media (max-width: 768px) {
-  /* Target the specific section padding to be smaller */
-  .about-book-section {
-    padding: 3rem 1rem !important; /* Less vertical, much less horizontal padding */
-  }
-
-  /* Remove container padding just for this section to prevent double-padding */
-  .about-book-section .container {
-    padding: 0 !important;
-    max-width: 100% !important;
-  }
-  
-  /* Make text fully justify so it looks like a clean block */
-  .about-book-content p {
-    text-align: justify !important; 
-    font-size: 1.05rem; /* Slightly smaller for mobile readability */
-    line-height: 1.6;
-  }
+  .about-book-section { padding: 3rem 1rem !important; }
+  .about-book-section .container { padding: 0 !important; max-width: 100% !important; }
+  .about-book-content p { text-align: justify !important; font-size: 1.05rem; line-height: 1.6; }
 }
