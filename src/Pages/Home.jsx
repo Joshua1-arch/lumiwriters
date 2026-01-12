@@ -87,9 +87,17 @@ const Home = () => {
         <div className="container" style={{ maxWidth: '900px' }}>
           
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0a192f' }}>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: '#0a192f' }}>
               About the Book
             </h2>
+            <a 
+              href="https://www.instagram.com/reel/DTV4ihrFYfi/?igsh=aXBuMnB0Nm52ZXdt" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="instagram-promo"
+            >
+              <Heart size={20} /> Watch the Promo on Instagram
+            </a>
           </div>
           
           <div className="about-book-content" style={{ fontSize: '1.15rem', lineHeight: '1.8', color: '#444', fontFamily: 'Georgia, serif' }}>
@@ -162,7 +170,7 @@ const Home = () => {
       {/* 4.5 AVAILABLE IN STORES (NEW) */}
       <section className="store-section">
         <div className="container">
-          <h2 style={{ fontSize: '2.5rem', color: '#0a192f', marginBottom: '1rem' }}>Available In Stores</h2>
+          <h2 className="store-heading">Available In Stores</h2>
           <p style={{ color: '#666' }}>Visit our retail partners to pick up a physical copy today.</p>
           
           <div className="store-grid">
@@ -170,7 +178,7 @@ const Home = () => {
               <img src="/1.jpg" alt="CROM Bookstore Flyer" className="store-flyer" />
             </div>
             <div className="store-info-side">
-              <h3 style={{ fontSize: '1.8rem', color: '#0a192f', marginBottom: '1rem' }}>CROM Bookstore</h3>
+              <h3 className="store-subheading">CROM Bookstore</h3>
               <p style={{ fontSize: '1.1rem', color: '#555', marginBottom: '2rem' }}>
                 You can now walk into CROM Bookstore and purchase your copy of <strong>Grace Unspeakable</strong>. 
                 Experience the journey in premium hardcopy.
