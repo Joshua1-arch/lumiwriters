@@ -412,3 +412,73 @@ footer {
   .about-book-section .container { padding: 0 !important; max-width: 100% !important; }
   .about-book-content p { text-align: justify !important; font-size: 1.05rem; line-height: 1.6; }
 }
+
+/* =========================================
+   8. STORE & PROMO SECTIONS
+   ========================================= */
+.store-section {
+  padding: 6rem 2rem;
+  background: white;
+  text-align: center;
+}
+
+.store-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 3rem auto 0;
+  flex-wrap: wrap;
+}
+
+.store-image-side {
+  flex: 1;
+  max-width: 400px;
+}
+
+.store-flyer {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.store-flyer:hover {
+  transform: scale(1.02);
+}
+
+.store-info-side {
+  flex: 1;
+  text-align: left;
+  min-width: 300px;
+}
+
+.instagram-promo {
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 2rem;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white;
+  border-radius: 50px;
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: transform 0.2s;
+}
+
+.instagram-promo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(204, 35, 102, 0.3);
+}
+
+@media (max-width: 768px) {
+  .store-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+  .store-info-side {
+    text-align: center;
+  }
+}

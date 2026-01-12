@@ -67,6 +67,9 @@ const Home = () => {
                 <a href="https://rhbooks.com.ng/product/grace-unspeakable-a-memoir/" className="sec-btn" target="_blank" rel="noopener noreferrer">
                   <ShoppingBag size={20} /> Rovingheights
                 </a>
+                <a href="https://www.crombooks.com.ng" className="sec-btn" target="_blank" rel="noopener noreferrer">
+                  <ShoppingBag size={20} /> CROM Books
+                </a>
                 <a href="#" className="sec-btn">
                   <AmazonIcon /> Amazon
                 </a>
@@ -82,9 +85,12 @@ const Home = () => {
       {/* 2. ABOUT THE BOOK */}
       <section className="about-book-section" style={{ padding: '6rem 2rem', background: bgGradient }}>
         <div className="container" style={{ maxWidth: '900px' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '2.5rem', textAlign: 'center', color: '#0a192f' }}>
-            About the Book
-          </h2>
+          
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0a192f' }}>
+              About the Book
+            </h2>
+          </div>
           
           <div className="about-book-content" style={{ fontSize: '1.15rem', lineHeight: '1.8', color: '#444', fontFamily: 'Georgia, serif' }}>
             <p>
@@ -153,13 +159,40 @@ const Home = () => {
         </div>
       </section>
 
+      {/* 4.5 AVAILABLE IN STORES (NEW) */}
+      <section className="store-section">
+        <div className="container">
+          <h2 style={{ fontSize: '2.5rem', color: '#0a192f', marginBottom: '1rem' }}>Available In Stores</h2>
+          <p style={{ color: '#666' }}>Visit our retail partners to pick up a physical copy today.</p>
+          
+          <div className="store-grid">
+            <div className="store-image-side">
+              <img src="/1.jpg" alt="CROM Bookstore Flyer" className="store-flyer" />
+            </div>
+            <div className="store-info-side">
+              <h3 style={{ fontSize: '1.8rem', color: '#0a192f', marginBottom: '1rem' }}>CROM Bookstore</h3>
+              <p style={{ fontSize: '1.1rem', color: '#555', marginBottom: '2rem' }}>
+                You can now walk into CROM Bookstore and purchase your copy of <strong>Grace Unspeakable</strong>. 
+                Experience the journey in premium hardcopy.
+              </p>
+              <a href="https://www.crombooks.com.ng" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                Visit CROM Bookstore Website
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 5. FINAL CTA */}
       <section style={{ padding: '5rem 2rem', textAlign: 'center', background: bgGradient }}>
         <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Begin The Journey Today</h2>
         <p style={{ marginBottom: '2rem', color: '#666' }}>Available in Hardcopy (₦25,000) and eBook (₦18,000).</p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <a href="https://selar.com/902j274843" className="btn btn-primary" style={{ padding: '1rem 2rem' }}>Buy Now on Selar</a>
-          <a href="https://rhbooks.com.ng/product/grace-unspeakable-a-memoir/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>Buy on Rovingheights</a>
+          <a href="https://rhbooks.com.ng/product/grace-unspeakable-a-memoir/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>Rovingheights</a>
+          <a href="https://www.crombooks.com.ng" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>CROM Books</a>
+          <a href="#" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>Amazon</a>
+          <a href="#" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>Kobo</a>
         </div>
       </section>
 
