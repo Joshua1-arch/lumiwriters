@@ -17,20 +17,20 @@ function AppContent() {
       <nav>
         {/* LOGO */}
         <Link to="/" className="logo" onClick={closeMenu}>
-          <img 
-            src="/Grace.png" 
-            alt="Grace Unspeakable" 
-            style={{ 
-              height: '50px', 
-              width: 'auto', 
-              objectFit: 'contain' 
-            }} 
+          <img
+            src="/Grace.png"
+            alt="Grace Unspeakable"
+            style={{
+              height: '50px',
+              width: 'auto',
+              objectFit: 'contain'
+            }}
           />
         </Link>
-        
+
         {/* MAIN TOGGLE (Visible on Navbar) */}
-        <button 
-          className="menu-toggle" 
+        <button
+          className="menu-toggle"
           onClick={toggleMenu}
           aria-label="Toggle navigation"
         >
@@ -39,21 +39,21 @@ function AppContent() {
         </button>
 
         <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          
+
           {/* --- NEW ADDITION: Close Icon inside the menu --- */}
           <div className="mobile-menu-close-icon" onClick={closeMenu}>
             <X size={30} />
           </div>
           {/* ----------------------------------------------- */}
 
-          <Link to="/" onClick={closeMenu}>Home</Link>
-          <Link to="/reviews" onClick={closeMenu}>Reviews</Link>
-          <Link to="/about" onClick={closeMenu}>About The Author</Link>
+          <Link to="/" className="link-underline" onClick={closeMenu}>Home</Link>
+          <Link to="/reviews" className="link-underline" onClick={closeMenu}>Reviews</Link>
+          <Link to="/about" className="link-underline" onClick={closeMenu}>About The Author</Link>
         </div>
       </nav>
 
       {/* Main Content */}
-      <div> 
+      <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/reviews" element={<Reviews />} />

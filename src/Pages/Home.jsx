@@ -1,45 +1,45 @@
 import React from 'react';
-import { 
+import {
   ArrowRight, BookOpen, CheckCircle, Heart, Shield, ShoppingBag
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // Simple Icons
-const SelarIcon = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>;
-const AmazonIcon = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.5 7.5c-3.5 0-6.5 2.5-6.5 6s3 6 6.5 6c2.5 0 4.5-1.5 5.5-3.5.5-1 1-1.5 2-1.5.5 0 1 .5 1 1 0 1.5-2 3.5-3.5 4.5-1.5 1-3.5 1.5-5.5 1.5-5 0-9-4-9-9s4-9 9-9c2.5 0 4.5.5 6 2 .5.5.5 1.5 0 2-.5.5-1.5.5-2 0-1-1-2.5-1.5-4-1.5z"/></svg>;
+const SelarIcon = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z" /></svg>;
+const AmazonIcon = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.5 7.5c-3.5 0-6.5 2.5-6.5 6s3 6 6.5 6c2.5 0 4.5-1.5 5.5-3.5.5-1 1-1.5 2-1.5.5 0 1 .5 1 1 0 1.5-2 3.5-3.5 4.5-1.5 1-3.5 1.5-5.5 1.5-5 0-9-4-9-9s4-9 9-9c2.5 0 4.5.5 6 2 .5.5.5 1.5 0 2-.5.5-1.5.5-2 0-1-1-2.5-1.5-4-1.5z" /></svg>;
 
 const Home = () => {
   // Define the gradient variable for reuse in inline styles
   const bgGradient = 'linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%)';
-  
+
   // CHANGED: Use the new Royal Blue accent for icons so they don't fight the background
-  const iconColor = "#0056b3"; 
+  const iconColor = "#0056b3";
 
   return (
     <div className="animate-fade">
-      
+
       {/* 1. HERO SECTION */}
       <section className="sales-hero">
         <div className="hero-container">
           {/* Left: The Book */}
-          <div className="hero-book-side">
-            <img 
-              src="/Grace.jpeg" 
-              alt="Grace Unspeakable Book Cover" 
+          <div className="hero-book-side animate-float">
+            <img
+              src="/Grace.jpeg"
+              alt="Grace Unspeakable Book Cover"
               className="hero-book-img"
             />
           </div>
 
           {/* Right: The Pitch */}
           <div className="hero-text-side">
-            <span className="hero-badge">Now Available</span>
+            <span className="hero-badge animate-pulse">Now Available</span>
             <h1 className="hero-title">Grace Unspeakable</h1>
             <p className="hero-subtitle">A Memoir of Faith, Survival, and Service</p>
-            
+
             <div className="hero-desc">
               <p>
-                <strong>Goddy Jedy-Agba</strong> faced a life-threatening illness that changed everything. 
-                This is the extraordinary story of his survival, his deep-rooted faith, and the profound 
+                <strong>Goddy Jedy-Agba</strong> faced a life-threatening illness that changed everything.
+                This is the extraordinary story of his survival, his deep-rooted faith, and the profound
                 grace that redefined his purpose.
               </p>
             </div>
@@ -60,12 +60,15 @@ const Home = () => {
             {/* Buy Buttons */}
             <div className="buy-buttons-container">
               <a href="https://selar.com/902j274843" className="main-buy-btn">
-                <SelarIcon /> Order on Selar (Nigeria)
+                <SelarIcon /> Order on Selar
               </a>
-              
+
               <div className="secondary-buttons">
                 <a href="https://rhbooks.com.ng/product/grace-unspeakable-a-memoir/" className="sec-btn" target="_blank" rel="noopener noreferrer">
                   <ShoppingBag size={20} /> Rovingheights
+                </a>
+                <a href="https://www.lulu.com/shop/goddy-jedy-agba/grace-unspeakable/ebook/product-w4wrjj4.html?page=1&pageSize=4" className="sec-btn">
+                  <BookOpen size={20} /> lulu
                 </a>
                 <a href="https://www.crombooks.com.ng" className="sec-btn" target="_blank" rel="noopener noreferrer">
                   <ShoppingBag size={20} /> CROM Books
@@ -85,26 +88,26 @@ const Home = () => {
       {/* 2. ABOUT THE BOOK */}
       <section className="about-book-section" style={{ padding: '6rem 2rem', background: bgGradient }}>
         <div className="container" style={{ maxWidth: '900px' }}>
-          
+
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: '#0a192f' }}>
               About the Book
             </h2>
-            <a 
-              href="https://www.instagram.com/reel/DTV4ihrFYfi/?igsh=aXBuMnB0Nm52ZXdt" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/reel/DTV4ihrFYfi/?igsh=aXBuMnB0Nm52ZXdt"
+              target="_blank"
               rel="noopener noreferrer"
               className="instagram-promo"
             >
               <Heart size={20} /> Watch the Promo on Instagram
             </a>
           </div>
-          
+
           <div className="about-book-content" style={{ fontSize: '1.15rem', lineHeight: '1.8', color: '#444', fontFamily: 'Georgia, serif' }}>
             <p>
               In <strong>Grace Unspeakable</strong>, Goddy Jedy-Agba shares an extraordinary story of resilience, faith, and purpose, offering a heartfelt reflection on a life shaped by trials, triumphs, and divine grace. This deeply personal memoir begins with a life-altering health crisis, a sudden illness that led to a near-fatal surgery and a coma. Emerging from the brink of death, the author discovers the transformative power of survival and healing, setting the stage for a journey of renewed perspective and purpose.
             </p>
-            
+
             <p>
               The narrative moves seamlessly from personal recovery to the demanding realm of leadership. Appointed as Nigeria’s Minister of State for Power, the author reflects on the immense challenges of navigating public service in a nation striving for transformation. Drawing on foundational roles at the Nigerian National Petroleum Corporation (NNPC) and his experience as an assistant to government ministers, he offers valuable insights into Nigeria’s development challenges and the resilience required to lead with integrity and vision.
             </p>
@@ -172,7 +175,7 @@ const Home = () => {
         <div className="container">
           <h2 className="store-heading">Available In Stores</h2>
           <p style={{ color: '#666' }}>Visit our retail partners to pick up a physical copy today.</p>
-          
+
           <div className="store-grid">
             <div className="store-image-side">
               <img src="/1.jpg" alt="CROM Bookstore Flyer" className="store-flyer" />
@@ -180,7 +183,7 @@ const Home = () => {
             <div className="store-info-side">
               <h3 className="store-subheading">CROM Bookstore</h3>
               <p style={{ fontSize: '1.1rem', color: '#555', marginBottom: '2rem' }}>
-                You can now walk into CROM Bookstore and purchase your copy of <strong>Grace Unspeakable</strong>. 
+                You can now walk into CROM Bookstore and purchase your copy of <strong>Grace Unspeakable</strong>.
                 Experience the journey in premium hardcopy.
               </p>
               <a href="https://www.crombooks.com.ng" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
@@ -201,6 +204,7 @@ const Home = () => {
           <a href="https://www.crombooks.com.ng" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>CROM Books</a>
           <a href="#" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>Amazon</a>
           <a href="#" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>Kobo</a>
+          <a href="https://www.lulu.com/shop/goddy-jedy-agba/grace-unspeakable/ebook/product-w4wrjj4.html?page=1&pageSize=4" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>lulu</a>
         </div>
       </section>
 
