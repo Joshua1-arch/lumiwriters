@@ -164,7 +164,7 @@ const Home = () => {
           <p style={{ maxWidth: '700px', margin: '0 auto 2rem auto', fontSize: '1.2rem', opacity: '0.9' }}>
             Goddy Jedy-Agba shares his journey not for applause, but to be a beacon of hope for anyone searching for light in the moment of darkness, and for those striving to see possibilities where others see only limitations.
             <br />
-            This is a story shaped by serving and sustained by grace- grace beyond words, grace truly unspeakable
+            This is a story shaped by serving and sustained by grace - grace beyond words, grace truly unspeakable
           </p>
           <Link to="/about" className="btn btn-outline" style={{ color: 'white', borderColor: 'white' }}>
             Read Full Bio <ArrowRight size={18} />
