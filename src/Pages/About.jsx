@@ -1,10 +1,10 @@
 import React from 'react';
-import { 
+import {
   BookOpen, Award, User, Feather, Briefcase, Sprout, Zap, Image
 } from 'lucide-react';
 
 export default function About() {
-  
+
   // Gallery Data (Placeholder names - ensure files exist in /public)
   const galleryImages = [
     { id: 1, src: "/Gal1.jpg", alt: "Goddy Jedy-Agba Portrait" },
@@ -15,36 +15,36 @@ export default function About() {
     { id: 7, src: "/Gal7.jpg", alt: "Goddy Jedy-Agba Portrait" },
     { id: 6, src: "/Gal6.jpg", alt: "Goddy Jedy-Agba Portrait" },
     { id: 9, src: "/Gal9.jpg", alt: "Goddy Jedy-Agba Portrait" },
-    
+
   ];
 
   return (
     <div className="animate-fade reviews-page-wrapper">
-      
+
       {/* --- PART 1: ABOUT THE AUTHOR (Bio) --- */}
       <div style={{ display: 'flex', gap: '4rem', alignItems: 'center', flexWrap: 'wrap', marginBottom: '6rem' }}>
-        
+
         {/* Left: Author Image */}
         <div style={{ flex: '1 1 350px', display: 'flex', justifyContent: 'center' }}>
           <div style={{ position: 'relative', width: '100%', maxWidth: '400px' }}>
-            <img 
-              src="/Author.jpg" 
-              alt="Goddy Jedy-Agba" 
-              style={{ 
-                width: '100%', 
-                borderRadius: '12px', 
+            <img
+              src="/Author.jpg"
+              alt="Goddy Jedy-Agba"
+              style={{
+                width: '100%',
+                borderRadius: '12px',
                 boxShadow: 'var(--shadow)',
                 objectFit: 'cover',
                 aspectRatio: '3/4',
-                background: '#eee' 
-              }} 
+                background: '#eee'
+              }}
             />
-            <div style={{ 
-              position: 'absolute', 
-              bottom: '-20px', 
-              right: '-20px', 
-              background: 'white', 
-              padding: '1.5rem', 
+            <div style={{
+              position: 'absolute',
+              bottom: '-20px',
+              right: '-20px',
+              background: 'white',
+              padding: '1.5rem',
               borderRadius: '12px',
               boxShadow: 'var(--shadow)',
               display: 'flex',
@@ -64,10 +64,10 @@ export default function About() {
         <div style={{ flex: '1 1 400px' }}>
           <span className="hero-badge">The Author</span>
           <h1 style={{ marginBottom: '1.5rem', fontSize: '3rem', lineHeight: '1.2' }}>Goddy Jedy-Agba, OFR</h1>
-          
+
           <div style={{ fontSize: '1.15rem', color: '#555', lineHeight: '1.8' }}>
             <p style={{ marginBottom: '1.5rem' }}>
-              <strong>Goddy Jedy-Agba, OFR</strong>, is a former Minister of State for Power, seasoned technocrat, and accomplished public servant with over three decades of experience in governance, oil and gas, and agriculture. 
+              <strong>Goddy Jedy-Agba, OFR</strong>, is a former Minister of State for Power, seasoned technocrat, and accomplished public servant with over three decades of experience in governance, oil and gas, and agriculture.
             </p>
             <p style={{ marginBottom: '1.5rem' }}>
               He served as Group General Manager in the Crude Oil Marketing Division at NNPC and later founded Godilogo Farms, empowering thousands of rural farmers. Honoured nationally for his integrity and leadership, he is also the author of <em>Stepping Forward with Uti J.D. Agba</em>, a tribute to legacy, service, and principled living.
@@ -93,9 +93,9 @@ export default function About() {
       {/* --- PART 2: CAREER MILESTONES (New) --- */}
       <div style={{ marginBottom: '6rem' }}>
         <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '3rem' }}>Decades of Impact</h2>
-        
+
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-          
+
           {/* Milestone 1 */}
           <div style={{ background: 'white', padding: '2rem', borderRadius: '12px', border: '1px solid #eee', textAlign: 'center' }}>
             <div style={{ background: '#fdfbf7', width: '60px', height: '60px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem auto' }}>
@@ -127,32 +127,32 @@ export default function About() {
       </div>
 
       {/* --- PART 3: GALLERY SECTION (New) --- */}
-      <div style={{ padding: '4rem 0', background: '#fdfbf7', marginBottom: '6rem', borderRadius: '16px' }}>
+      <div style={{ padding: '4rem 0', background: 'var(--bg-light)', marginBottom: '6rem', borderRadius: '16px' }}>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'var(--primary)' }}>Moments in Time</h2>
           <p style={{ color: '#666', fontSize: '1.1rem' }}>A glimpse into the life and journey of Goddy Jedy-Agba.</p>
         </div>
 
         {/* Gallery Grid */}
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-          gap: '1.5rem', 
-          padding: '0 2rem', 
-          maxWidth: '1200px', 
-          margin: '0 auto' 
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '1.5rem',
+          padding: '0 2rem',
+          maxWidth: '1200px',
+          margin: '0 auto'
         }}>
           {galleryImages.map((img) => (
-            <div key={img.id} style={{ 
-              borderRadius: '12px', 
-              overflow: 'hidden', 
-              boxShadow: '0 4px 10px rgba(0,0,0,0.1)', 
+            <div key={img.id} style={{
+              borderRadius: '12px',
+              overflow: 'hidden',
+              boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
               height: '250px',
               background: '#fff'
             }}>
-              <img 
-                src={img.src} 
-                alt={img.alt} 
+              <img
+                src={img.src}
+                alt={img.alt}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }}
                 onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                 onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
@@ -163,10 +163,10 @@ export default function About() {
 
         {/* View More Button */}
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <a 
-            href="https://atilary.pixieset.com/princegoddyjedyagbasportraits/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href="https://atilary.pixieset.com/princegoddyjedyagbasportraits/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-outline"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}
           >
