@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ArrowRight, BookOpen, CheckCircle, Heart, Shield, ShoppingBag
+  ArrowRight, BookOpen, CheckCircle, Heart, Shield, ShoppingBag, Calendar, MapPin
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -124,6 +124,69 @@ const Home = () => {
               Through moments of vulnerability, the wisdom of mentors, and triumph over adversity, Grace Unspeakable offers a unique blend of personal reflection, professional insight, and spiritual wisdom. It is a story that inspires readers to find purpose in their pain, embrace the strength found in faith, and live a life of gratitude, service, and excellence.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* 2.5 UPCOMING EVENT: BOOK READING */}
+      <section className="event-section">
+        <div className="event-card">
+
+          <div className="event-header">
+            <span className="event-tag">Exclusive Event</span>
+            <h2 className="event-title">Book Reading Session</h2>
+            <p className="event-subtitle">With Author Prince Goddy Jedy-Agba</p>
+          </div>
+
+          <div className="event-body">
+            {/* Visual Side */}
+            <div className="event-visuals">
+              <div style={{ position: 'relative', display: 'inline-block' }}>
+                <img
+                  src="/Author.jpg"
+                  alt="Prince Goddy Jedy-Agba"
+                  className="event-author-img"
+                />
+                <img
+                  src="/Bookreading.jpeg"
+                  alt="Grace Unspeakable Book Cover"
+                  className="event-book-img"
+                  style={{ right: '-50px', bottom: '-15px' }}
+                />
+              </div>
+            </div>
+
+            {/* Info Side */}
+            <div className="event-info">
+
+              <div className="event-info-item">
+                <div className="event-icon-box">
+                  <Calendar size={28} />
+                </div>
+                <div className="event-details-text">
+                  <h4>March 31st</h4>
+                  <p>11:00 AM - 2:00 PM</p>
+                </div>
+              </div>
+
+              <div className="event-info-item">
+                <div className="event-icon-box">
+                  <MapPin size={28} />
+                </div>
+                <div className="event-details-text">
+                  <h4>Rovingheights Bookstore</h4>
+                  <p>Shop S1, 2nd Floor, City Center Mall,<br /> Gimbiya St, Garki, Abuja</p>
+                </div>
+              </div>
+
+              <div className="event-cta">
+                <a href="https://rhbooks.com.ng" target="_blank" rel="noopener noreferrer" className="main-buy-btn" style={{ padding: '1rem 2rem', width: 'auto', display: 'inline-flex' }}>
+                  Get Directions / RSVP
+                </a>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
