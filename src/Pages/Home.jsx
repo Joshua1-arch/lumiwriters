@@ -179,7 +179,7 @@ const Home = () => {
               </div>
 
               <div className="event-cta">
-                <a href="https://rhbooks.com.ng" target="_blank" rel="noopener noreferrer" className="main-buy-btn" style={{ padding: '1rem 2rem', width: 'auto', display: 'inline-flex' }}>
+                <a href="https://maps.app.goo.gl/NvihcoRGus37vxSr8" target="_blank" rel="noopener noreferrer" className="main-buy-btn" style={{ padding: '1rem 2rem', width: 'auto', display: 'inline-flex' }}>
                   Get Directions / RSVP
                 </a>
               </div>
