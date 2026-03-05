@@ -147,7 +147,7 @@ const Home = () => {
                   className="event-author-img"
                 />
                 <img
-                  src="/Bookreading.jpeg"
+                  src="/BookReadingMarch31.jpeg"
                   alt="Grace Unspeakable Book Cover"
                   className="event-book-img"
                   style={{ right: '-50px', bottom: '-15px' }}
