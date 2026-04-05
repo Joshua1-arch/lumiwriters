@@ -99,7 +99,7 @@ const Home = () => {
               rel="noopener noreferrer"
               className="instagram-promo"
             >
-              <Heart size={20} /> Watch the Promo on Instagram
+               Watch the Promo on Instagram
             </a>
           </div>
 
@@ -127,68 +127,95 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 2.5 UPCOMING EVENT: BOOK READING */}
-      <section className="event-section">
-        <div className="event-card">
 
-          <div className="event-header">
-            <span className="event-tag">Exclusive Event</span>
-            <h2 className="event-title">Book Reading Session</h2>
-            <p className="event-subtitle">With Author Prince Goddy Jedy-Agba</p>
+
+      {/* 4.6 AUDIOBOOK SECTION */}
+      <section className="audiobook-section" style={{ padding: '6rem 2rem', background: bgGradient }}>
+        <div className="container" style={{ maxWidth: '1000px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0a192f' }}>
+              Listen to Grace Unspeakable
+            </h2>
+            <p style={{ color: '#666', maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem' }}>
+              Experience the memoir in audio format.
+            </p>
           </div>
 
-          <div className="event-body">
-            {/* Visual Side */}
-            <div className="event-visuals">
-              <div style={{ position: 'relative', display: 'inline-block' }}>
-                <img
-                  src="/Author.jpg"
-                  alt="Prince Goddy Jedy-Agba"
-                  className="event-author-img"
-                />
-                <img
-                  src="/BookReadingMarch31.jpeg"
-                  alt="Grace Unspeakable Book Cover"
-                  className="event-book-img"
-                  style={{ right: '-50px', bottom: '-15px' }}
-                />
+          <div className="audiobook-platforms" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', marginTop: '3rem' }}>
+            
+            {/* Spotify - Diaspora */}
+            <div className="platform-card" style={{ background: 'white', borderRadius: '16px', padding: '2.5rem', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', transition: 'transform 0.3s ease, box-shadow 0.3s ease', border: '2px solid transparent' }}
+                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = '#1DB954'; }}
+                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = 'transparent'; }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '80px', height: '80px', background: '#1DB954', borderRadius: '50%', margin: '0 auto 1.5rem auto' }}>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
               </div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#0a192f', textAlign: 'center' }}>Spotify (Diaspora)</h3>
+              <p style={{ color: '#666', marginBottom: '1.5rem', textAlign: 'center', fontSize: '0.95rem' }}>
+                Listen on Spotify - International Edition
+              </p>
+              <a href="https://open.spotify.com/show/5Ud83ZdV9CGed6DDabufsR" target="_blank" rel="noopener noreferrer" 
+                 className="btn btn-primary" 
+                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
+                Listen on Spotify
+              </a>
             </div>
 
-            {/* Info Side */}
-            <div className="event-info">
-
-              <div className="event-info-item">
-                <div className="event-icon-box">
-                  <Calendar size={28} />
-                </div>
-                <div className="event-details-text">
-                  <h4>March 31st</h4>
-                  <p>11:00 AM - 2:00 PM</p>
-                </div>
+            {/* Spotify - Main */}
+            <div className="platform-card" style={{ background: 'white', borderRadius: '16px', padding: '2.5rem', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', transition: 'transform 0.3s ease, box-shadow 0.3s ease', border: '2px solid transparent' }}
+                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = '#1DB954'; }}
+                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = 'transparent'; }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '80px', height: '80px', background: '#1DB954', borderRadius: '50%', margin: '0 auto 1.5rem auto' }}>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
               </div>
-
-              <div className="event-info-item">
-                <div className="event-icon-box">
-                  <MapPin size={28} />
-                </div>
-                <div className="event-details-text">
-                  <h4>Rovingheights Bookstore</h4>
-                  <p>Shop S1, 2nd Floor, City Center Mall,<br /> Gimbiya St, Garki, Abuja</p>
-                </div>
-              </div>
-
-              <div className="event-cta">
-                <a href="https://maps.app.goo.gl/NvihcoRGus37vxSr8" target="_blank" rel="noopener noreferrer" className="main-buy-btn" style={{ padding: '1rem 2rem', width: 'auto', display: 'inline-flex' }}>
-                  Get Directions / RSVP
-                </a>
-              </div>
-
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#0a192f', textAlign: 'center' }}>Spotify</h3>
+              <p style={{ color: '#666', marginBottom: '1.5rem', textAlign: 'center', fontSize: '0.95rem' }}>
+                Stream the full audiobook experience
+              </p>
+              <a href="https://open.spotify.com/show/5Zn36ZlPYf8UUukYRpy5Ok?si=87181e7c7dc548b0" target="_blank" rel="noopener noreferrer" 
+                 className="btn btn-primary" 
+                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
+                Listen on Spotify
+              </a>
             </div>
+
+            {/* Apple Podcasts */}
+            <div className="platform-card" style={{ background: 'white', borderRadius: '16px', padding: '2.5rem', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', transition: 'transform 0.3s ease, box-shadow 0.3s ease', border: '2px solid transparent' }}
+                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = '#A2AAAD'; }}
+                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = 'transparent'; }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '80px', height: '80px', background: '#A2AAAD', borderRadius: '50%', margin: '0 auto 1.5rem auto' }}>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                  <path d="M18.7 8.5c-.8-.4-1.7-.6-2.7-.6-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5c1 0 1.9-.2 2.7-.6v-7.8zM12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
+                </svg>
+              </div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#0a192f', textAlign: 'center' }}>Apple Podcasts</h3>
+              <p style={{ color: '#666', marginBottom: '1.5rem', textAlign: 'center', fontSize: '0.95rem' }}>
+                Available on all Apple devices
+              </p>
+              <a href="https://podcasts.apple.com/ng/podcast/grace-unspeakable/id1890792749" target="_blank" rel="noopener noreferrer" 
+                 className="btn btn-primary" 
+                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', background: '#A2AAAD' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.7 8.5c-.8-.4-1.7-.6-2.7-.6-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5c1 0 1.9-.2 2.7-.6v-7.8zM12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
+                </svg>
+                Listen on Apple Podcasts
+              </a>
+            </div>
+
           </div>
-
         </div>
       </section>
+
 
       {/* 3. THE HOOK: Why Read This? */}
       <section className="hook-section-bg" style={{ padding: '6rem 2rem', background: bgGradient }}>
@@ -258,6 +285,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+
 
       {/* 5. FINAL CTA */}
       <section style={{ padding: '5rem 2rem', textAlign: 'center', background: bgGradient }}>
