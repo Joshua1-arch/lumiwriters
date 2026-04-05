@@ -45,15 +45,22 @@ const Home = () => {
             </div>
 
             {/* Pricing */}
-            <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem', alignItems: 'center' }}>
-              <div>
-                <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', fontWeight: 'bold', letterSpacing: '1px' }}>Hardcopy</span>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1.5rem', marginBottom: '2rem', alignItems: 'center' }}>
+              <div style={{ textAlign: 'center' }}>
+                <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', fontWeight: 'bold', letterSpacing: '1px', marginBottom: '0.5rem' }}>Paperback</span>
                 <span style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#0a192f' }}>₦25,000</span>
               </div>
-              <div style={{ width: '1px', height: '40px', background: '#dae8f5' }}></div>
-              <div>
-                <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', fontWeight: 'bold', letterSpacing: '1px' }}>Ebook</span>
+              <div style={{ textAlign: 'center' }}>
+                <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', fontWeight: 'bold', letterSpacing: '1px', marginBottom: '0.5rem' }}>Hardback</span>
+                <span style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#0a192f' }}>₦40,000</span>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', fontWeight: 'bold', letterSpacing: '1px', marginBottom: '0.5rem' }}>E-book</span>
                 <span style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#0a192f' }}>₦18,000</span>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', fontWeight: 'bold', letterSpacing: '1px', marginBottom: '0.5rem' }}>Audiobook</span>
+                <span style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#0a192f' }}>$29</span>
               </div>
             </div>
 
@@ -291,7 +298,7 @@ const Home = () => {
       {/* 5. FINAL CTA */}
       <section style={{ padding: '5rem 2rem', textAlign: 'center', background: bgGradient }}>
         <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Begin The Journey Today</h2>
-        <p style={{ marginBottom: '2rem', color: '#666' }}>Available in Hardcopy (₦25,000) and eBook (₦18,000).</p>
+        <p style={{ marginBottom: '2rem', color: '#666' }}>Available in Paperback (₦25,000), Hardback (₦40,000), E-book (₦18,000), and Audiobook ($29).</p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <a href="https://selar.com/902j274843" className="btn btn-primary" style={{ padding: '1rem 2rem' }}>Buy Now on Selar</a>
           <a href="https://rhbooks.com.ng/product/grace-unspeakable-a-memoir/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>Rovingheights</a>
